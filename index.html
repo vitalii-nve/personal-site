@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitalii Balitskyi — Systems Engineering Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0c0e11;
+    --bg-card: #13161b;
+    --border: #252a33;
+    --accent: #c8a44e;
+    --accent-dim: rgba(200,164,78,.12);
+    --accent-glow: rgba(200,164,78,.06);
+    --text: #e2e0dc;
+    --text-dim: #8a8780;
+    --text-muted: #5c5952;
+    --white: #f5f3ef;
+    --font-display: 'Libre Baskerville', Georgia, serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+  }
+
+  html { scroll-behavior: smooth; background: var(--bg); color: var(--text); }
+  body { font-family: var(--font-mono); font-weight: 300; font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
+  }
+
+  .container { max-width: 100%; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 0; border-bottom: 1px solid var(--border); position: relative; }
+  section:last-of-type { border-bottom: none; }
+
+  /* NAV */
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); background: rgba(12,14,17,.82); border-bottom: 1px solid var(--border); }
+  nav { max-width: 100%; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-name { font-family: var(--font-display); font-size: 14px; color: var(--white); letter-spacing: .3px; }
+  .nav-links { display: flex; gap: 8px; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 12px; letter-spacing: .8px; text-transform: uppercase; padding: 6px 14px; border-radius: 3px; transition: color .25s, background .25s; }
+  .nav-links a:hover { color: var(--accent); background: var(--accent-dim); }
+
+  /* HERO */
+  .hero { padding-top: 140px; padding-bottom: 80px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; top: 80px; right: -120px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
+  .hero-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; animation: fadeUp .7s ease-out .2s both; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 56px); font-weight: 400; color: var(--white); line-height: 1.15; margin-bottom: 32px; animation: fadeUp .7s ease-out .35s both; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-intro { max-width: 600px; font-size: 15px; color: var(--text-dim); line-height: 1.85; animation: fadeUp .7s ease-out .5s both; }
+  .hero-intro p + p { margin-top: 14px; }
+  .hero-stats { display: flex; gap: 48px; margin-top: 48px; animation: fadeUp .7s ease-out .65s both; }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num { font-family: var(--font-display); font-size: 32px; color: var(--white); line-height: 1; }
+  .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 8px; }
+
+  /* SECTION HEADERS */
+  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: 2px; flex-shrink: 0; }
+  .section-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--white); }
+  .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 16px; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .about-text { color: var(--text-dim); font-size: 15px; line-height: 1.85; }
+  .about-text p + p { margin-top: 20px; }
+  .about-quote { font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--white); line-height: 1.6; border-left: 2px solid var(--accent); padding-left: 24px; margin-bottom: 40px; }
+  .about-detail-block { padding: 20px 0; border-top: 1px solid var(--border); }
+  .about-detail-block h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 400; }
+  .about-detail-block p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  /* EXPERIENCE */
+  .exp-card { display: grid; grid-template-columns: 180px 1fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--border); }
+  .exp-card:last-child { border-bottom: none; }
+  .exp-period { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); padding-top: 4px; }
+  .exp-period .company { display: block; color: var(--accent); font-size: 13px; letter-spacing: .5px; margin-top: 4px; text-transform: none; }
+  .exp-period .location { display: block; font-size: 11px; color: var(--text-muted); text-transform: none; margin-top: 2px; letter-spacing: 0; }
+  .exp-role { font-family: var(--font-display); font-size: 18px; color: var(--white); margin-bottom: 14px; }
+  .exp-desc { color: var(--text-dim); font-size: 14px; line-height: 1.8; }
+  .exp-highlight { margin-top: 16px; padding: 12px 16px; background: var(--accent-dim); border-left: 2px solid var(--accent); border-radius: 0 3px 3px 0; font-size: 13px; color: var(--text); line-height: 1.6; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .exp-tag { font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); padding: 4px 12px; border-radius: 2px; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .skill-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px; transition: border-color .3s, transform .3s; position: relative; overflow: hidden; }
+  .skill-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s ease; }
+  .skill-block:hover::before { transform: scaleX(1); }
+  .skill-block:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .skill-block h3 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .skill-block ul { list-style: none; }
+  .skill-block li { font-size: 13px; color: var(--text-dim); padding: 4px 0; position: relative; padding-left: 14px; }
+  .skill-block li::before { content: '\203A'; position: absolute; left: 0; color: var(--text-muted); }
+
+  /* EDUCATION */
+  .edu-card { display: grid; grid-template-columns: 180px 1fr; gap: 32px; padding: 24px 0; }
+  .edu-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); padding-top: 4px; }
+  .edu-school { font-family: var(--font-display); font-size: 17px; color: var(--white); margin-bottom: 10px; line-height: 1.4; }
+  .edu-degree { font-size: 13px; color: var(--text-dim); line-height: 1.6; padding: 3px 0; }
+  .edu-degree .grade { color: var(--accent); margin-left: 4px; }
+
+  /* PUBLICATIONS */
+  .pub-list { display: flex; flex-direction: column; gap: 24px; }
+  .pub-item { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; transition: border-color .3s, transform .3s; }
+  .pub-item:hover { border-color: var(--accent); transform: translateX(4px); }
+  .pub-year { font-family: var(--font-display); font-size: 14px; color: var(--text-muted); padding-top: 2px; }
+  .pub-title { font-family: var(--font-display); font-size: 15px; color: var(--white); line-height: 1.5; margin-bottom: 6px; }
+  .pub-desc { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
+
+  /* CONTACT */
+  .contact-section { text-align: center; padding: 100px 0 80px; }
+  .contact-section .section-title { margin-bottom: 16px; }
+  .contact-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 36px; }
+  .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .8px; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 12px 28px; border: 1px solid var(--accent); border-radius: 3px; transition: background .25s, color .25s; }
+  .contact-link:hover { background: var(--accent); color: var(--bg); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    section { padding: 56px 0; }
+    .hero { padding-top: 120px; padding-bottom: 64px; }
+    .hero-stats { gap: 32px; flex-wrap: wrap; }
+    .exp-card, .edu-card { grid-template-columns: 1fr; gap: 8px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pub-item { grid-template-columns: 48px 1fr; gap: 12px; padding: 16px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <div class="nav-name">V. Balitskyi</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Expertise</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-label">System Engineering Lead &middot; Denmark</div>
+    <h1>Turning breakthrough<br>science into <em>scalable</em><br>hardware.</h1>
+    <div class="hero-intro">
+      <p>System Engineering Lead with 10+ years in deep-tech R&D, specialising in de-risking complex hardware-software integration for high-growth technology sectors. I take lab-scale prototypes and turn them into high-throughput industrial systems through robust CAD/FEA/CFD architecture and scalable manufacturing processes.</p>
+      <p>Currently directing the mechanical architecture for next-generation atomic-layer 3D printing at ATLANT 3D in Taastrup, Denmark.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Years in R&D</span></div>
+      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Publications</span></div>
+      <div class="stat-item"><span class="stat-num">5.0</span><span class="stat-label">GPA &mdash; MEng</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header"><span class="section-num">01</span><h2 class="section-title">About</h2><div class="section-line"></div></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I've spent my career at the intersection of advanced materials science and precision engineering &mdash; the narrow space where a process that works on a bench needs to survive the realities of production volume, thermal drift, and a ticking clock.</p>
+        <p>At ATLANT 3D I lead the mechanical architecture for atomic-layer 3D printing systems that push resolution limits well beyond conventional manufacturing. Before that, I designed and scaled a modular MXene synthesis reactor at the Materials Research Centre in Kyiv &mdash; taking milligram-level lab samples to 100-gram industrial batches. Along the way I also engineered an automated yarn dip-coating platform that enabled the first continuous production of smart textiles.</p>
+        <p>I'm energised by hard constraints and cross-disciplinary problems &mdash; the kind that demand fluency in simulation, hardware, software, and people management all in the same week. My goal is always the same: align R&amp;D roadmaps with commercial milestones so that capital efficiency and technical ambition reinforce each other.</p>
+      </div>
+      <div>
+        <div class="about-quote">&ldquo;The best systems don't just work &mdash; they make the physics obvious and the complexity invisible.&rdquo;</div>
+        <div class="about-detail-block"><h4>Location</h4><p>Greve, Denmark</p></div>
+        <div class="about-detail-block"><h4>Focus Areas</h4><p>Atomic-layer deposition, MXene synthesis, precision mechatronics, industrial scale-up</p></div>
+        <div class="about-detail-block"><h4>Education</h4><p>MEng &amp; BE &mdash; Kyiv Polytechnic Institute<br>Grade: 5.0 / 5.0</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header"><span class="section-num">02</span><h2 class="section-title">Experience</h2><div class="section-line"></div></div>
+
+    <div class="exp-card">
+      <div class="exp-period">Nov 2024 &mdash; Present<span class="company">ATLANT 3D</span><span class="location">Taastrup, Denmark</span></div>
+      <div>
+        <div class="exp-role">Mechanical Engineering Group Lead</div>
+        <div class="exp-desc">Directing the full mechanical architecture for next-generation atomic-layer 3D printing systems, ensuring hardware reliability keeps pace with aggressive commercialisation timelines. Leading the fusion of complex mechatronic subsystems and automated hardware prototypes into scalable, production-ready solutions. Managing the complete product lifecycle &mdash; from conceptual 3D modelling through field testing &mdash; leveraging a decade of R&amp;D experience to compress design iteration cycles.</div>
+        <div class="exp-tags"><span class="exp-tag">Systems Architecture</span><span class="exp-tag">Team Leadership</span><span class="exp-tag">Precision Mechatronics</span><span class="exp-tag">Product Lifecycle</span></div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-period">Jun 2022 &mdash; Oct 2024<span class="company">ATLANT 3D</span><span class="location">Taastrup, Denmark</span></div>
+      <div>
+        <div class="exp-role">Mechanical Engineer &amp; Team Lead</div>
+        <div class="exp-desc">Led the mechanical design and systems-level integration of the Nanofabricator&trade; platform, ensuring hardware-software synergy for atomic-layer 3D printing. Directed a cross-functional team through the full PLM cycle, managing the transition from R&amp;D prototypes to small-batch industrial production. Conducted high-fidelity FEA and CFD simulations (ANSYS / SolidWorks) to validate sub-micron motion accuracy and thermal stability. Owned the technical roadmap for core mechatronic subsystems, coordinating with global suppliers for 100% on-time delivery of critical components.</div>
+        <div class="exp-highlight">Key result: Developed a modular gas delivery architecture that reduced system assembly time by 25% and enabled rapid reconfiguration for diverse material deposition requirements.</div>
+        <div class="exp-tags"><span class="exp-tag">Nanofabricator&trade;</span><span class="exp-tag">FEA / CFD</span><span class="exp-tag">DFM</span><span class="exp-tag">Supply Chain</span></div>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-period">Dec 2016 &mdash; Apr 2022<span class="company">Materials Research Centre</span><span class="location">Kyiv, Ukraine</span></div>
+      <div>
+        <div class="exp-role">Mechanical Engineer / System Integrator</div>
+        <div class="exp-desc">Architected a modular etching reactor for MXene synthesis that transitioned output from milligram-level lab samples to 100g industrial batches, de-risking the R&amp;D pipeline. Spearheaded the engineering of an automated high-throughput yarn dip-coating platform in collaboration with international research teams, enabling the first continuous production of smart textiles. Performed multi-physics feasibility analysis (SolidWorks / ANSYS) and integrated electrical and control components into unified prototypes with real-time data monitoring and automated temperature regulation.</div>
+        <div class="exp-highlight">Key result: Three-order-of-magnitude scale-up of MXene synthesis &mdash; from milligrams to 100 grams &mdash; plus the world's first automated platform for conductive smart-textile yarn production.</div>
+        <div class="exp-tags"><span class="exp-tag">Chemical Scale-up</span><span class="exp-tag">Reactor Design</span><span class="exp-tag">PLC Automation</span><span class="exp-tag">Smart Textiles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header"><span class="section-num">03</span><h2 class="section-title">Expertise</h2><div class="section-line"></div></div>
+    <div class="skills-grid">
+      <div class="skill-block"><h3>Strategic</h3><ul><li>R&amp;D Strategy &amp; Execution</li><li>Product Lifecycle Management</li><li>Cross-functional Leadership</li><li>Capital-efficient Roadmapping</li></ul></div>
+      <div class="skill-block"><h3>Technical</h3><ul><li>System Architecture</li><li>Precision Hardware Integration</li><li>Process Automation</li><li>CAD / FEA / CFD (ANSYS, SW)</li></ul></div>
+      <div class="skill-block"><h3>Analytical</h3><ul><li>Multi-Physics Simulation</li><li>Scalable Manufacturing Design</li><li>Advanced Material Synthesis</li><li>Design for Manufacture</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header"><span class="section-num">04</span><h2 class="section-title">Education</h2><div class="section-line"></div></div>
+    <div class="edu-card">
+      <div class="edu-label">University</div>
+      <div>
+        <div class="edu-school">National Technical University of Ukraine<br>&lsquo;Kyiv Polytechnic Institute&rsquo;</div>
+        <div class="edu-degree">Master of Engineering (MEng), Mechanical Engineering<span class="grade">5.0 / 5.0</span></div>
+        <div class="edu-degree">Bachelor of Engineering (BE), Engineering &amp; Material Processing<span class="grade">5.0 / 5.0</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header"><span class="section-num">05</span><h2 class="section-title">Publications</h2><div class="section-line"></div></div>
+    <div class="pub-list">
+      <div class="pub-item"><div class="pub-year">2022</div><div><div class="pub-title">MXene Functionalized Kevlar Yarn via Automated, Continuous Dip Coating</div><div class="pub-desc">Lead Mechanical Engineer &amp; System Integrator for the automated platform enabling continuous production of smart textile conductive yarns.</div></div></div>
+      <div class="pub-item"><div class="pub-year">2018</div><div><div class="pub-title">Scale-up of MXene Synthesis</div><div class="pub-desc">Contributed to research on the synthesis and properties of 2D transition metal carbides and nitrides for electromagnetic shielding and energy conversion.</div></div></div>
+      <div class="pub-item"><div class="pub-year">2017</div><div><div class="pub-title">Prototype Air-Curtains System Units in Three Different Protection Modes</div><div class="pub-desc">Lead researcher for aerodynamic system design and experimental testing of air-free and wall-adjusted protection units.</div></div></div>
+      <div class="pub-item"><div class="pub-year">2017</div><div><div class="pub-title">Synthesis and Optical Properties of 2D Carbides MXenes</div><div class="pub-desc">Co-authored research on tunable optical properties of MXenes for transparent conductors and photothermal therapy.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Let's Talk</h2>
+    <p class="contact-sub">Open to consulting engagements, advisory roles, and deep-tech collaborations.</p>
+    <div class="contact-links">
+      <a href="mailto:vitalii@balitskyi.net" class="contact-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>Email</a>
+      <a href="tel:+4550175423" class="contact-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Phone</a>
+      <a href="#" class="contact-link" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer><div class="container">&copy; 2026 Vitalii Balitskyi &middot; Greve, Denmark</div></footer>
+
+</body>
+</html>
