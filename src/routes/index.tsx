@@ -17,19 +17,24 @@ const personSchema = {
   "@type": "Person",
   name: "Vitalii Balitskyi",
   jobTitle: "System Engineering Lead",
-  worksFor: {
-    "@type": "Organization",
-    name: "ATLANT 3D",
-  },
+  worksFor: [
+    { "@type": "Organization", name: "ATLANT 3D Nanosystems" },
+    { "@type": "Organization", name: "Spacer Robotics" },
+  ],
   alumniOf: {
     "@type": "EducationalOrganization",
     name: "National Technical University of Ukraine 'Kyiv Polytechnic Institute'",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Greve",
+    addressCountry: "DK",
   },
   sameAs: [
     "https://www.linkedin.com/in/vitalii-balitskyi",
     "https://www.researchgate.net/profile/Vitalii-Balitskyi",
   ],
-  url: "https://balitskyi.net",
+  url: "https://balitskyi.net/",
 };
 
 export const Route = createFileRoute("/")({
@@ -39,26 +44,20 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Vitalii Balitskyi — System Engineering Lead and consultant in Denmark. Helping deep-tech hardware teams turn fragile prototypes into production-ready systems.",
+          "Vitalii Balitskyi — System Engineering Lead in Denmark. I turn breakthrough science into scalable hardware, from lab prototype to industrial system.",
       },
       { rel: "canonical", href: "https://balitskyi.net/" },
       { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead & Consultant" },
       {
         property: "og:description",
         content:
-          "Helping deep-tech hardware teams turn fragile prototypes into production-ready systems. System architecture, prototype-to-production pathways, and team advisory.",
+          "Systems and mechanical engineering for deep-tech hardware. Took atomic layer processing from lab to product across three platforms — benchtop, space-rated, and industrial.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://balitskyi.net/" },
       { property: "og:image", content: "https://balitskyi.net/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://balitskyi.net/og-image.jpg" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        innerHTML: JSON.stringify(personSchema),
-      },
     ],
   }),
   component: Index,
@@ -67,6 +66,12 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Rendered here rather than via head.scripts — head scripts with
+          innerHTML are not emitted into the prerendered HTML. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <Nav />
       <main>
         <Hero />

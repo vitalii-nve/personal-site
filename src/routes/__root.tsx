@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Vitalii Balitskyi — System Engineering Lead and consultant in Denmark. Helping deep-tech hardware teams turn fragile prototypes into production-ready systems.",
+          "Vitalii Balitskyi — System Engineering Lead in Denmark. I turn breakthrough science into scalable hardware, from lab prototype to industrial system.",
       },
       { name: "author", content: "Vitalii Balitskyi" },
       { rel: "canonical", href: "https://balitskyi.net/" },
@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Helping deep-tech hardware teams turn fragile prototypes into production-ready systems. System architecture, prototype-to-production pathways, and team advisory.",
+          "Systems and mechanical engineering for deep-tech hardware. Took atomic layer processing from lab to product across three platforms — benchtop, space-rated, and industrial.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://balitskyi.net/" },
