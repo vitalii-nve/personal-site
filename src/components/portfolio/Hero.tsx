@@ -2,23 +2,18 @@ import { useEffect, useRef } from "react";
 import portrait from "../../assets/portrait.jpg";
 
 const stats = [
-  { value: "10+", label: "Years" },
+  { value: "10+", label: "Years in R&D" },
+  { value: "3", label: "Platforms industrialised" },
   { value: "7", label: "Publications" },
-  { value: "5.0", label: "GPA" },
 ];
 
 const headlineWords = [
-  "I",
-  "help",
-  "deep-tech",
-  "hardware",
-  "teams",
-  "turn",
-  "fragile",
-  "prototypes",
+  "Turning",
+  "breakthrough",
+  "science",
   "into",
-  "production-ready",
-  "systems.",
+  "scalable",
+  "hardware.",
 ];
 
 export function Hero() {
@@ -57,19 +52,27 @@ export function Hero() {
                     className="word-reveal mr-2 inline-block"
                     style={{ animationDelay: `${0.05 + i * 0.06}s` }}
                   >
-                    {word === "production-ready" ? (
-                      <em className="not-italic text-gold">{word}</em>
+                    {word === "scalable" ? (
+                      <em className="italic text-gold">{word}</em>
                     ) : (
                       word
                     )}
                   </span>
                 ))}
               </h1>
-              <p className="mt-6 max-w-md font-mono text-sm leading-relaxed text-dim">
-                Advisory and hands-on engineering for semiconductor, photonics, and
-                advanced materials companies building precision vacuum, motion, and
-                deposition systems.
-              </p>
+              <div className="mt-6 max-w-md space-y-4 font-mono text-sm leading-relaxed text-dim">
+                <p>
+                  System Engineering Lead with 10+ years in deep-tech R&D, specialising
+                  in de-risking complex hardware-software integration. I take lab-scale
+                  prototypes and convert them into high-throughput industrial systems
+                  through robust CAD/FEA/CFD architecture and scalable manufacturing
+                  processes.
+                </p>
+                <p>
+                  Currently directing mechanical architecture for next-generation
+                  atomic-layer 3D printing at ATLANT 3D in Taastrup, Denmark.
+                </p>
+              </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#contact" className="cta-primary">

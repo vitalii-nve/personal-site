@@ -5,6 +5,7 @@ interface Role {
   company: string;
   location: string;
   title: string;
+  priorTitles?: string[];
   description: string;
   keyResult?: string;
   tags: string[];
@@ -12,26 +13,34 @@ interface Role {
 
 const roles: Role[] = [
   {
-    period: "Nov 2024 — Present",
-    company: "ATLANT 3D",
+    period: "Jun 2022 — Present",
+    company: "ATLANT 3D Nanosystems",
     location: "Taastrup, Denmark",
     title: "Mechanical Engineering Group Lead",
+    priorTitles: [
+      "Team Lead, Engineering · Jan 2023 — 2024",
+      "Mechanical Design Engineer · Jun 2022 — Dec 2022",
+    ],
     description:
-      "Leading the mechanical engineering group behind ATLANT 3D's atomic-layer manufacturing systems. Owning system architecture, design standards, and the path from experimental prototypes to production-grade platforms.",
+      "Took ATLANT 3D's Direct Atomic Layer Processing technology from lab to product across three platforms: a benchtop research tool, a space-rated system for in-orbit manufacturing, and an industrial production machine. Led mechanical design and the R&D-to-production transfer for each, and grew the mechanical engineering function into a team.",
     keyResult:
-      "Established the design review and documentation culture the team now runs on.",
-    tags: ["Team Leadership", "System Architecture", "Atomic Layer Manufacturing"],
+      "Industrialised the same core technology three times, under three different sets of constraints — benchtop, space-qualified, and industrial.",
+    tags: [
+      "Atomic Layer Processing",
+      "R&D to Production",
+      "Space Hardware",
+      "Team Leadership",
+    ],
   },
   {
-    period: "Jun 2022 — Oct 2024",
-    company: "ATLANT 3D",
-    location: "Taastrup, Denmark",
-    title: "Mechanical Engineer & Team Lead",
+    // TODO: confirm start date and location before publishing.
+    period: "Concurrent role",
+    company: "Spacer Robotics",
+    location: "Denmark",
+    title: "Senior Systems & Mechanical Engineer",
     description:
-      "Designed precision motion, thermal, and vacuum-compatible subsystems for a direct-write atomic layer 3D printing platform. Coordinated mechanical workstreams and aligned hardware with process and software teams.",
-    keyResult:
-      "Redesigned the print-head motion subsystem, cutting assembly time by roughly 40% while improving positioning repeatability.",
-    tags: ["Precision Mechanics", "Vacuum Systems", "Motion Control", "DFM"],
+      "Systems and mechanical engineering for autonomous construction robotics — machines that have to hold precision on an unstructured, uneven job site rather than on an optical bench. Work spans mobile robot platforms, manipulators, and the mechanical integration behind them.",
+    tags: ["Robotics", "Autonomous Systems", "Field Hardware", "Mechatronics"],
   },
   {
     period: "Dec 2016 — Apr 2022",
@@ -39,8 +48,15 @@ const roles: Role[] = [
     location: "Kyiv, Ukraine",
     title: "Mechanical Engineer / System Integrator",
     description:
-      "Designed and integrated mechanical systems for materials science instrumentation — crystal growth equipment, vacuum and CVD systems, and custom characterization rigs.",
-    tags: ["System Integration", "Materials Science", "Instrumentation", "Prototyping"],
+      "Designed and integrated mechanical systems for materials science instrumentation — crystal growth equipment, vacuum and CVD systems, and custom characterisation rigs — alongside the scale-up work that turned laboratory material synthesis into a repeatable industrial process.",
+    keyResult:
+      "Designed and scaled a modular MXene synthesis reactor from milligram-level lab samples to 100-gram industrial batches.",
+    tags: [
+      "Materials Science",
+      "Industrial Scale-up",
+      "Instrumentation",
+      "System Integration",
+    ],
   },
 ];
 
@@ -67,7 +83,21 @@ export function Experience() {
                 <span className="font-mono text-xs text-subtle">{role.location}</span>
               </div>
               <div>
-                <h3 className="font-serif text-xl text-heading md:text-2xl">{role.title}</h3>
+                <h3 className="font-serif text-xl text-heading md:text-2xl">
+                  {role.title}
+                </h3>
+                {role.priorTitles && (
+                  <ul className="mt-2 space-y-1">
+                    {role.priorTitles.map((prior) => (
+                      <li
+                        key={prior}
+                        className="font-mono text-xs text-subtle"
+                      >
+                        {prior}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <p className="mt-4 max-w-3xl font-mono text-sm leading-relaxed text-dim">
                   {role.description}
                 </p>

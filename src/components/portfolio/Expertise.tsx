@@ -4,28 +4,28 @@ const categories = [
   {
     label: "Strategic",
     skills: [
-      "R&D Roadmapping",
-      "Team Building & Mentoring",
-      "Technology Scouting",
+      "R&D Strategy & Execution",
+      "Product Lifecycle Management",
       "Cross-functional Leadership",
+      "Capital-efficient Roadmapping",
     ],
   },
   {
     label: "Technical",
     skills: [
-      "Precision Mechanical Design",
-      "Vacuum & Deposition Systems",
-      "Mechatronics & Motion Control",
-      "Design for Manufacture",
+      "System Architecture",
+      "Precision Hardware Integration",
+      "Process Automation",
+      "CAD/FEA/CFD (ANSYS, SolidWorks)",
     ],
   },
   {
     label: "Analytical",
     skills: [
-      "Systems Thinking",
-      "Root-cause Analysis",
-      "FEA & Simulation",
-      "Data-driven Decisions",
+      "Multi-Physics Simulation",
+      "Scalable Manufacturing Design",
+      "Advanced Material Synthesis",
+      "Design for Manufacture",
     ],
   },
 ];
