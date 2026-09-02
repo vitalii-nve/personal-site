@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 const links = [
-  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Experience", href: "#experience" },
   { label: "Expertise", href: "#expertise" },
   { label: "Publications", href: "#publications" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 

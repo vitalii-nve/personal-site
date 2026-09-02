@@ -14,7 +14,7 @@ const roles: Role[] = [
   {
     period: "Nov 2024 — Present",
     company: "ATLANT 3D",
-    location: "Copenhagen, Denmark",
+    location: "Taastrup, Denmark",
     title: "Mechanical Engineering Group Lead",
     description:
       "Leading the mechanical engineering group behind ATLANT 3D's atomic-layer manufacturing systems. Owning system architecture, design standards, and the path from experimental prototypes to production-grade platforms.",
@@ -25,7 +25,7 @@ const roles: Role[] = [
   {
     period: "Jun 2022 — Oct 2024",
     company: "ATLANT 3D",
-    location: "Copenhagen, Denmark",
+    location: "Taastrup, Denmark",
     title: "Mechanical Engineer & Team Lead",
     description:
       "Designed precision motion, thermal, and vacuum-compatible subsystems for a direct-write atomic layer 3D printing platform. Coordinated mechanical workstreams and aligned hardware with process and software teams.",

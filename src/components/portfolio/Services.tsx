@@ -25,7 +25,7 @@ export function Services() {
   return (
     <section id="services" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="02" title="How I Help" />
+        <SectionHeader number="01" title="How I Help" />
         <div className="grid gap-4 md:grid-cols-3">
           {services.map((service) => (
             <article

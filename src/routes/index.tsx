@@ -27,8 +27,9 @@ const personSchema = {
   },
   sameAs: [
     "https://www.linkedin.com/in/vitalii-balitskyi",
+    "https://www.researchgate.net/profile/Vitalii-Balitskyi",
   ],
-  url: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app",
+  url: "https://balitskyi.net",
 };
 
 export const Route = createFileRoute("/")({
@@ -40,7 +41,7 @@ export const Route = createFileRoute("/")({
         content:
           "Vitalii Balitskyi — System Engineering Lead and consultant in Denmark. Helping deep-tech hardware teams turn fragile prototypes into production-ready systems.",
       },
-      { rel: "canonical", href: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/" },
+      { rel: "canonical", href: "https://balitskyi.net/" },
       { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead & Consultant" },
       {
         property: "og:description",
@@ -48,10 +49,10 @@ export const Route = createFileRoute("/")({
           "Helping deep-tech hardware teams turn fragile prototypes into production-ready systems. System architecture, prototype-to-production pathways, and team advisory.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/" },
-      { property: "og:image", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/og-image.jpg" },
+      { property: "og:url", content: "https://balitskyi.net/" },
+      { property: "og:image", content: "https://balitskyi.net/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/og-image.jpg" },
+      { name: "twitter:image", content: "https://balitskyi.net/og-image.jpg" },
     ],
     scripts: [
       {
@@ -69,14 +70,14 @@ function Index() {
       <Nav />
       <main>
         <Hero />
-        <About />
         <Services />
+        <About />
         <Portfolio />
         <Testimonials />
         <Experience />
         <Expertise />
-        <Education />
         <Publications />
+        <Education />
         <Contact />
       </main>
       <Footer />

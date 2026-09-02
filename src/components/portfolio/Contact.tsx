@@ -21,7 +21,7 @@ const contacts = [
   },
   {
     label: "Phone",
-    href: "tel:+4500000000",
+    href: "tel:+4550175423",
     icon: (
       <svg
         width="16"

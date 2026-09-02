@@ -1,15 +1,20 @@
 import { SectionHeader } from "./SectionHeader";
 
+// Degrees restored to match balitskyi.net. The previous build listed a
+// Ph.D. and an M.Sc.; neither appears on the live site or the CV.
 const degrees = [
-  { degree: "Ph.D. — Mechanical Engineering", gpa: "GPA 5.0/5.0" },
-  { degree: "M.Sc. — Mechanical Engineering", gpa: "GPA 5.0/5.0" },
+  { degree: "Master of Engineering (MEng) — Mechanical Engineering", gpa: "5.0/5.0" },
+  {
+    degree: "Bachelor of Engineering (BE) — Engineering & Material Processing",
+    gpa: "5.0/5.0",
+  },
 ];
 
 export function Education() {
   return (
     <section id="education" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="05" title="Education" />
+        <SectionHeader number="07" title="Education" />
         <div className="grid gap-10 md:grid-cols-[180px_1fr]">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
             University

@@ -6,7 +6,7 @@ const details = [
     label: "Focus Areas",
     value: "Deep-tech hardware · Atomic layer manufacturing · Lab-to-fab scale-up",
   },
-  { label: "Education", value: "M.Sc. & Ph.D., Kyiv Polytechnic Institute" },
+  { label: "Education", value: "MEng & BEng, Kyiv Polytechnic Institute" },
 ];
 
 const proofPoints = [
@@ -19,7 +19,7 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="01" title="About" />
+        <SectionHeader number="02" title="About" />
         <div className="grid gap-14 lg:grid-cols-2">
           <div className="space-y-5 font-mono text-sm leading-relaxed text-dim">
             <p>

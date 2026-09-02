@@ -34,7 +34,7 @@ export function Expertise() {
   return (
     <section id="expertise" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="03" title="Expertise" />
+        <SectionHeader number="05" title="Expertise" />
         <div className="grid gap-6 md:grid-cols-3">
           {categories.map((category) => (
             <div

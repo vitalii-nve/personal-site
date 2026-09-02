@@ -3,52 +3,47 @@ import { SectionHeader } from "./SectionHeader";
 interface Publication {
   year: string;
   title: string;
-  description: string;
+  venue: string;
+  doi?: string;
 }
 
-// Placeholder entries — replace titles and descriptions with the real papers.
+// Real peer-reviewed record, restored from balitskyi.net.
+// TODO: add the DOI for each entry and render the title as a link.
 const publications: Publication[] = [
   {
     year: "2024",
-    title: "Direct-write atomic layer processing for microscale additive manufacturing",
-    description:
-      "Process-window and hardware considerations for atomic layer 3D printing of functional microstructures.",
+    title: "MXene Functionalized Kevlar Yarn via Automated, Continuous Dip Coating",
+    venue: "Advanced Functional Materials",
   },
   {
     year: "2023",
-    title: "Thermal management strategies in multi-zone deposition printheads",
-    description:
-      "Design and validation of thermally stable printhead architectures for area-selective atomic layer deposition.",
+    title: "Polycaprolactone–MXene Nanofibrous Scaffolds for Tissue Engineering",
+    venue: "ACS Applied Materials & Interfaces, 15(11), 14033–14047",
   },
   {
     year: "2023",
-    title: "Precision motion systems for maskless microscale fabrication",
-    description:
-      "Motion-stage design trade-offs for sub-micron repeatability in direct-write manufacturing tools.",
+    title: "Affordable Combustion Synthesis of V₂AlC Precursor for V₂CTₓ MXene",
+    venue: "Graphene and 2D Materials, 8, 93–105",
   },
   {
     year: "2022",
-    title: "Integration of vacuum-based deposition platforms for advanced materials research",
-    description:
-      "A systems-engineering approach to modular, serviceable research instrumentation.",
+    title: "MXene-Assisted Ablation of Cells with a Pulsed Near-Infrared Laser",
+    venue: "ACS Applied Materials & Interfaces, 14(25), 28683–28696",
   },
   {
     year: "2018",
-    title: "Structural design of load-bearing frames for crystal growth equipment",
-    description:
-      "FEA-driven frame optimization for high-temperature crystal growth systems.",
+    title: "Scale-up of MXene Synthesis",
+    venue: "Conference proceedings",
   },
   {
     year: "2017",
-    title: "Design methodology for vacuum-compatible mechanical assemblies",
-    description:
-      "Practical rules for materials, venting, and sealing in custom vacuum hardware.",
+    title: "Prototype Air-Curtains System Units in Three Different Protection Modes",
+    venue: "Conference proceedings",
   },
   {
     year: "2017",
-    title: "Thermal stabilization of precision instruments in laboratory environments",
-    description:
-      "Low-cost approaches to drift reduction in sensitive measurement setups.",
+    title: "Synthesis and Optical Properties of 2D Carbides MXenes",
+    venue: "Conference proceedings",
   },
 ];
 
@@ -71,7 +66,7 @@ export function Publications() {
                   {publication.title}
                 </h3>
                 <p className="mt-2 font-mono text-sm leading-relaxed text-dim">
-                  {publication.description}
+                  {publication.venue}
                 </p>
               </div>
             </article>
