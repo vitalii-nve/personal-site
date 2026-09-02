@@ -76,7 +76,7 @@ export function Hero() {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#contact" className="cta-primary">
-                Book a 20-minute call
+                Start a conversation
               </a>
               <a href="#portfolio" className="cta-secondary">
                 See recent work
@@ -114,7 +114,7 @@ export function Hero() {
                 Available for
               </p>
               <p className="mt-2 font-mono text-sm text-dim">
-                System architecture reviews · prototype-to-production pathways · team & process advisory
+                Architecture reviews · prototype-to-production · hardware under hard constraints
               </p>
             </div>
           </div>

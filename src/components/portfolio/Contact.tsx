@@ -1,3 +1,9 @@
+// Set this to a real form endpoint (Formspree, Web3Forms and Netlify Forms all
+// work on a static host) to enable the contact form. While it is empty the
+// section shows the email route instead — a form that posts to mailto: fails
+// silently in most browsers and does nothing at all on mobile.
+const FORM_ENDPOINT = "";
+
 const contacts = [
   {
     label: "Email",
@@ -65,8 +71,9 @@ export function Contact() {
               Start a project conversation
             </h2>
             <p className="mt-6 max-w-md font-mono text-sm leading-relaxed text-dim">
-              Tell me what you are building. I typically reply within one business day
-              and can start with a short diagnostic call.
+              Half an hour, no charge, no obligation. You describe the problem, I
+              tell you whether I am the right person for it. I usually reply within
+              a business day.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {contacts.map((contact) => (
@@ -84,10 +91,10 @@ export function Contact() {
             </div>
           </div>
 
+          {FORM_ENDPOINT ? (
           <form
-            action="mailto:vitalii.balitskyi@gmail.com"
+            action={FORM_ENDPOINT}
             method="post"
-            encType="text/plain"
             className="space-y-5 border border-border bg-card p-6 md:p-8"
           >
             <div>
@@ -145,9 +152,34 @@ export function Contact() {
               Send message
             </button>
             <p className="font-mono text-[10px] text-subtle">
-              Opens your email client with a pre-filled message. No data is stored on this site.
+              Goes straight to my inbox. Nothing is stored on this site.
             </p>
           </form>
+          ) : (
+            <div className="border border-border bg-card p-6 md:p-8">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-gold">
+                What to send
+              </p>
+              <ul className="mt-5 space-y-3 font-mono text-sm leading-relaxed text-dim">
+                {[
+                  "What you are building, in a paragraph.",
+                  "Where it is stuck — or which decision is coming up.",
+                  "Roughly where you are: concept, prototype, pre-production.",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <span aria-hidden="true" className="text-gold">
+                      ›
+                    </span>
+                    {line}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 font-mono text-sm leading-relaxed text-dim">
+                That is enough for me to tell you on a first call whether I can
+                help. No NDA needed to have that conversation.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>
