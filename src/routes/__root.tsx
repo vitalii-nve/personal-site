@@ -7,10 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import "../styles.css";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -84,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Vitalii Balitskyi — System Engineering Lead and consultant in Denmark. Helping deep-tech hardware teams turn fragile prototypes into production-ready systems.",
       },
       { name: "author", content: "Vitalii Balitskyi" },
-      { rel: "canonical", href: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/" },
+      { rel: "canonical", href: "https://balitskyi.net/" },
       { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead & Consultant" },
       {
         property: "og:description",
@@ -92,10 +88,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Helping deep-tech hardware teams turn fragile prototypes into production-ready systems. System architecture, prototype-to-production pathways, and team advisory.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/" },
-      { property: "og:image", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/og-image.jpg" },
+      { property: "og:url", content: "https://balitskyi.net/" },
+      { property: "og:image", content: "https://balitskyi.net/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://id-preview--9f7381ba-a972-48dc-a474-a3e1d30861fa.lovable.app/og-image.jpg" },
+      { name: "twitter:image", content: "https://balitskyi.net/og-image.jpg" },
     ],
     links: [
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },

@@ -1,29 +1,45 @@
-# Welcome to your Lovable project
+# balitskyi.net
 
-This project was built with [Lovable](https://lovable.dev).
+Personal site for Vitalii Balitskyi — systems and mechanical engineering for
+deep-tech hardware.
 
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Built with TanStack Start, React, TypeScript and Tailwind CSS.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 20+.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
 
-## Built with
+## Scripts
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+| Command | Does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier |
+
+## Structure
+
+```
+src/
+  routes/                 TanStack Router file routes
+  components/portfolio/   Page sections — content lives in these files
+  components/ui/          shadcn/ui primitives
+  assets/                 Images
+  styles.css              Design tokens and global styles
+```
+
+Page content is plain data at the top of each component in
+`src/components/portfolio/` — edit the arrays, not the markup.
+
+## Content rules
+
+Claims on this site must be traceable to a public source or to Vitalii's own
+record. Project descriptions state role and result only, never mechanism.
+No supplier names, unit counts, or mass/power/cost figures.
