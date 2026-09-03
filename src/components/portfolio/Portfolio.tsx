@@ -1,5 +1,10 @@
 import { SectionHeader } from "./SectionHeader";
 import zeroG from "../../assets/zero-g.jpg";
+import lite from "../../assets/lite.jpg";
+import pro from "../../assets/pro.jpg";
+import grid from "../../assets/grid.jpg";
+import mxeneReactor from "../../assets/MXene-reactor-setup.jpg";
+import dipCoating from "../../assets/dip_coating.jpg";
 
 interface Project {
   title: string;
@@ -29,6 +34,7 @@ const projects: Project[] = [
   },
   {
     title: "NANOFABRICATOR™ Lite — Gen 1 and Gen 2",
+    image: lite,
     context: "ATLANT 3D · benchtop tool for atomic-scale fabrication",
     problem:
       "The benchtop tool existed as a hand-built research instrument. To be sold and supported it had to become something that could be manufactured repeatably by people who had not designed it.",
@@ -40,6 +46,7 @@ const projects: Project[] = [
   },
   {
     title: "NANOFABRICATOR® PRO",
+    image: pro,
     context: "ATLANT 3D · industrial platform for AI-driven materials discovery",
     problem:
       "The industrial platform had to be designed for build by an external manufacturing partner — which means the design has to survive being handed across a company boundary, not just across a desk.",
@@ -51,6 +58,7 @@ const projects: Project[] = [
   },
   {
     title: "GRID — autonomous rebar-tying robot",
+    image: grid,
     context: "Spacer Robotics · construction site automation",
     problem:
       "Rebar tying is repetitive, slow and physically punishing, and it happens on an unstructured, uneven site — the opposite of the controlled environment precision hardware is usually designed for.",
@@ -62,6 +70,7 @@ const projects: Project[] = [
   },
   {
     title: "Modular MXene synthesis reactor",
+    image: mxeneReactor,
     context: "Materials Research Centre · laboratory to industrial scale-up",
     problem:
       "MXene synthesis worked at milligram scale in the lab. Every downstream application — composites, sensors, textiles — was rate-limited by how little material existed.",
@@ -73,6 +82,7 @@ const projects: Project[] = [
   },
   {
     title: "Automated yarn dip-coating platform",
+    image: dipCoating,
     context: "Materials Research Centre · smart textiles",
     problem:
       "MXene-functionalised yarn was a manual batch process, which put any real textile application out of reach.",
@@ -103,7 +113,7 @@ export function Portfolio() {
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="aspect-[16/10] w-full object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                    className="aspect-[16/10] w-full bg-background object-cover transition duration-700 group-hover:scale-[1.03]"
                   />
                 </div>
               )}
