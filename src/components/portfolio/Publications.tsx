@@ -36,9 +36,10 @@ const publications: Publication[] = [
     venue: "ACS Applied Materials & Interfaces, 14(25), 28683–28696",
   },
   {
-    year: "2018",
-    title: "Scale-up of MXene Synthesis",
-    venue: "Conference proceedings",
+    year: "2020",
+    title: "Scalable Synthesis of Ti₃C₂Tₓ MXene",
+    venue: "Advanced Engineering Materials, 22(3), 1901241",
+    doi: "10.1002/adem.201901241",
   },
   {
     year: "2017",

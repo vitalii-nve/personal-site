@@ -76,6 +76,7 @@ const projects: Project[] = [
   },
   {
     title: "Modular MXene synthesis reactor",
+    link: { href: "https://doi.org/10.1002/adem.201901241", label: "Read the paper" },
     image: mxeneReactor,
     context: "Materials Research Centre · laboratory to industrial scale-up",
     problem:
