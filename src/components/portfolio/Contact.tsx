@@ -46,7 +46,7 @@ const contacts = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/vitalii-balitskyi27/",
+    href: "https://www.linkedin.com/in/vitalii-balitskyi27",
     icon: (
       <svg
         width="16"
