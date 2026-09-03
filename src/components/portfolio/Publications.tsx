@@ -83,7 +83,7 @@ export function Publications() {
   return (
     <section id="publications" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="06" title="Publications" />
+        <SectionHeader number="05" title="Publications" />
         <div className="space-y-4">
           {publications.map((publication) => (
             <article

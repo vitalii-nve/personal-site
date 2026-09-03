@@ -14,7 +14,7 @@ export function Education() {
   return (
     <section id="education" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="07" title="Education" />
+        <SectionHeader number="06" title="Education" />
         <div className="grid gap-10 md:grid-cols-[180px_1fr]">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
             University

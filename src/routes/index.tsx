@@ -6,7 +6,6 @@ import { Services } from "../components/portfolio/Services";
 import { Portfolio } from "../components/portfolio/Portfolio";
 import { Testimonials } from "../components/portfolio/Testimonials";
 import { Experience } from "../components/portfolio/Experience";
-import { Expertise } from "../components/portfolio/Expertise";
 import { Education } from "../components/portfolio/Education";
 import { Publications } from "../components/portfolio/Publications";
 import { Contact } from "../components/portfolio/Contact";
@@ -25,13 +24,14 @@ const personSchema = {
     "@type": "EducationalOrganization",
     name: "National Technical University of Ukraine 'Kyiv Polytechnic Institute'",
   },
+  email: "vitalii@balitskyi.net",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Greve",
     addressCountry: "DK",
   },
   sameAs: [
-    "https://www.linkedin.com/in/vitalii-balitskyi",
+    "https://www.linkedin.com/in/vitalii-balitskyi27/",
     "https://www.researchgate.net/profile/Vitalii-Balitskyi",
   ],
   url: "https://balitskyi.net/",
@@ -80,7 +80,6 @@ function Index() {
         <Portfolio />
         <Testimonials />
         <Experience />
-        <Expertise />
         <Publications />
         <Education />
         <Contact />

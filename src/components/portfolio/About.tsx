@@ -10,7 +10,7 @@ const details = [
 ];
 
 const proofPoints = [
-  "Led mechanical architecture for atomic-layer 3D printing systems across three platforms — benchtop, space-qualified, and industrial.",
+  "Took an atomic-layer processing system into a space-qualified, crew-rated envelope for deployment on the ISS.",
   "Designed and scaled a modular MXene synthesis reactor from milligram-level lab samples to 100-gram industrial batches.",
   "Engineered an automated yarn dip-coating platform enabling the first continuous production of smart textiles.",
 ];

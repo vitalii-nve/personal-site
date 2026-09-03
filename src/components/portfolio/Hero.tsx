@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import portrait from "../../assets/portrait.jpg";
 
 const stats = [
-  { value: "10+", label: "Years in R&D" },
+  { value: "10+", label: "Years in hardware" },
   { value: "3", label: "Platforms industrialised" },
   { value: "11", label: "Publications" },
 ];
@@ -62,15 +62,14 @@ export function Hero() {
               </h1>
               <div className="mt-6 max-w-md space-y-4 font-mono text-sm leading-relaxed text-dim">
                 <p>
-                  System Engineering Lead with 10+ years in deep-tech R&D, specialising
-                  in de-risking complex hardware-software integration. I take lab-scale
-                  prototypes and convert them into high-throughput industrial systems
-                  through robust CAD/FEA/CFD architecture and scalable manufacturing
-                  processes.
+                  Materials science invents the process. Mechanical engineering makes
+                  it run every day, unattended, to a number. Most deep-tech hardware
+                  lives or dies in the gap between the two — and that gap is where I
+                  work.
                 </p>
                 <p>
-                  Currently directing mechanical architecture for next-generation
-                  atomic-layer 3D printing at ATLANT 3D in Taastrup, Denmark.
+                  Ten years across vacuum, motion and deposition systems. Currently
+                  leading mechanical engineering at ATLANT 3D in Taastrup, Denmark.
                 </p>
               </div>
             </div>

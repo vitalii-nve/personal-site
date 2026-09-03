@@ -24,7 +24,7 @@ const roles: Role[] = [
     description:
       "Took ATLANT 3D's Direct Atomic Layer Processing technology from lab to product across three platforms: a benchtop research tool, a space-rated system for in-orbit manufacturing, and an industrial production machine. Led mechanical design and the R&D-to-production transfer for each, and grew the mechanical engineering function into a team.",
     keyResult:
-      "Industrialised the same core technology three times, under three different sets of constraints — benchtop, space-qualified, and industrial.",
+      "Grew the mechanical engineering function from a single role into a group, and set the design review and documentation practice the team now runs on.",
     tags: [
       "Atomic Layer Processing",
       "R&D to Production",

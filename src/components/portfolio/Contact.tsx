@@ -7,7 +7,7 @@ const FORM_ENDPOINT = "";
 const contacts = [
   {
     label: "Email",
-    href: "mailto:vitalii.balitskyi@gmail.com",
+    href: "mailto:vitalii@balitskyi.net",
     icon: (
       <svg
         width="16"
@@ -46,7 +46,7 @@ const contacts = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/vitalii-balitskyi",
+    href: "https://www.linkedin.com/in/vitalii-balitskyi27/",
     icon: (
       <svg
         width="16"
