@@ -89,8 +89,8 @@ export function Hero() {
             <img
               src={portrait}
               alt="Portrait of Vitalii Balitskyi, System Engineering Lead"
-              width={768}
-              height={1024}
+              width={1400}
+              height={1400}
               className="aspect-[3/4] w-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-[1.02] lg:aspect-auto lg:h-full"
             />
           </div>
