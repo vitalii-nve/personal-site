@@ -1,4 +1,5 @@
 import { SectionHeader } from "./SectionHeader";
+import zeroG from "../../assets/zero-g.jpg";
 
 interface Project {
   title: string;
@@ -16,6 +17,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "NANOFABRICATOR® Zero-G",
+    image: zeroG,
     context: "ATLANT 3D · atomic layer processing for in-space manufacturing",
     problem:
       "Spare parts, prototype components and high-precision repairs on a crewed platform have to be launched from the ground — slow, expensive, and impossible to improvise. ATLANT 3D's atomic layer processing worked on a bench; it needed to work in orbit.",
