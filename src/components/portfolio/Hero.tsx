@@ -4,7 +4,7 @@ import portrait from "../../assets/portrait.jpg";
 const stats = [
   { value: "10+", label: "Years in R&D" },
   { value: "3", label: "Platforms industrialised" },
-  { value: "7", label: "Publications" },
+  { value: "11", label: "Publications" },
 ];
 
 const headlineWords = [
