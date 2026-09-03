@@ -31,7 +31,7 @@ const personSchema = {
     addressCountry: "DK",
   },
   sameAs: [
-    "https://www.linkedin.com/in/vitalii-balitskyi27/",
+    "https://www.linkedin.com/in/balitskyi/",
     "https://www.researchgate.net/profile/Vitalii-Balitskyi",
   ],
   url: "https://balitskyi.net/",
