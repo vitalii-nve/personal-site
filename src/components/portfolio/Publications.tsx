@@ -7,27 +7,32 @@ interface Publication {
   doi?: string;
 }
 
-// Real peer-reviewed record, restored from balitskyi.net.
-// TODO: add the DOI for each entry and render the title as a link.
+// Real peer-reviewed record, restored from balitskyi.net. DOIs verified via
+// Crossref against the author list (published as "Balitskiy"/"Balitskyi").
+// The three conference entries have no DOI on record.
 const publications: Publication[] = [
   {
     year: "2024",
     title: "MXene Functionalized Kevlar Yarn via Automated, Continuous Dip Coating",
+    doi: "10.1002/adfm.202312434",
     venue: "Advanced Functional Materials",
   },
   {
     year: "2023",
     title: "Polycaprolactone–MXene Nanofibrous Scaffolds for Tissue Engineering",
+    doi: "10.1021/acsami.2c22780",
     venue: "ACS Applied Materials & Interfaces, 15(11), 14033–14047",
   },
   {
     year: "2023",
     title: "Affordable Combustion Synthesis of V₂AlC Precursor for V₂CTₓ MXene",
+    doi: "10.1007/s41127-023-00059-1",
     venue: "Graphene and 2D Materials, 8, 93–105",
   },
   {
     year: "2022",
     title: "MXene-Assisted Ablation of Cells with a Pulsed Near-Infrared Laser",
+    doi: "10.1021/acsami.2c08678",
     venue: "ACS Applied Materials & Interfaces, 14(25), 28683–28696",
   },
   {
@@ -63,7 +68,18 @@ export function Publications() {
               </span>
               <div>
                 <h3 className="font-serif text-lg leading-snug text-heading">
-                  {publication.title}
+                  {publication.doi ? (
+                    <a
+                      href={`https://doi.org/${publication.doi}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline decoration-border underline-offset-4 transition-colors hover:decoration-gold hover:text-gold"
+                    >
+                      {publication.title}
+                    </a>
+                  ) : (
+                    publication.title
+                  )}
                 </h3>
                 <p className="mt-2 font-mono text-sm leading-relaxed text-dim">
                   {publication.venue}

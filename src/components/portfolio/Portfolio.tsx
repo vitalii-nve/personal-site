@@ -15,6 +15,8 @@ interface Project {
   tags: string[];
   // Optional. Add a cleared photo to src/assets, import it above, and set it here.
   image?: string;
+  // Optional public reference — a product page or the paper behind the work.
+  link?: { href: string; label: string };
 }
 
 // All entries describe role and result only — never mechanism. Supplier names,
@@ -22,6 +24,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "NANOFABRICATOR® Zero-G",
+    link: { href: "https://atlant3d.com/nanofabricator-zero-g/", label: "ATLANT 3D product page" },
     image: zeroG,
     context: "ATLANT 3D · atomic layer processing for in-space manufacturing",
     problem:
@@ -34,6 +37,7 @@ const projects: Project[] = [
   },
   {
     title: "NANOFABRICATOR™ Lite — Gen 1 and Gen 2",
+    link: { href: "https://atlant3d.com/nanofabricator-lite/", label: "ATLANT 3D product page" },
     image: lite,
     context: "ATLANT 3D · benchtop tool for atomic-scale fabrication",
     problem:
@@ -46,6 +50,7 @@ const projects: Project[] = [
   },
   {
     title: "NANOFABRICATOR® PRO",
+    link: { href: "https://atlant3d.com/nanofabricator_pro/", label: "ATLANT 3D product page" },
     image: pro,
     context: "ATLANT 3D · industrial platform for AI-driven materials discovery",
     problem:
@@ -58,6 +63,7 @@ const projects: Project[] = [
   },
   {
     title: "GRID — autonomous rebar-tying robot",
+    link: { href: "https://spacerrobotics.ai/", label: "Spacer Robotics" },
     image: grid,
     context: "Spacer Robotics · construction site automation",
     problem:
@@ -82,6 +88,7 @@ const projects: Project[] = [
   },
   {
     title: "Automated yarn dip-coating platform",
+    link: { href: "https://doi.org/10.1002/adfm.202312434", label: "Read the paper" },
     image: dipCoating,
     context: "Materials Research Centre · smart textiles",
     problem:
@@ -113,7 +120,7 @@ export function Portfolio() {
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="aspect-[16/10] w-full bg-background object-cover transition duration-700 group-hover:scale-[1.03]"
+                    className="aspect-[16/10] w-full bg-background object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
                   />
                 </div>
               )}
@@ -160,6 +167,17 @@ export function Portfolio() {
                     </li>
                   ))}
                 </ul>
+                {project.link && (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-70"
+                  >
+                    {project.link.label}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
               </div>
             </article>
           ))}
