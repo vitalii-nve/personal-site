@@ -9,11 +9,6 @@ const details = [
   { label: "Education", value: "MEng & BEng, Kyiv Polytechnic Institute" },
 ];
 
-const proofPoints = [
-  "Took an atomic-layer processing system into a space-qualified, crew-rated envelope for deployment on the ISS.",
-  "Designed and scaled a modular MXene synthesis reactor from milligram-level lab samples to 100-gram industrial batches.",
-  "Engineered an automated yarn dip-coating platform enabling the first continuous production of smart textiles.",
-];
 
 export function About() {
   return (
@@ -33,20 +28,8 @@ export function About() {
               research and scaling laboratory chemistry into industrial equipment. It
               continues in Denmark, where I lead the mechanical engineering group at
               ATLANT 3D and have taken the same core atomic layer processing
-              technology to product three times over — as a benchtop research tool, a
-              space-rated system for in-orbit manufacturing, and an industrial
-              production machine.
+              technology to product.
             </p>
-            <ul className="space-y-3 pt-4">
-              {proofPoints.map((point, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span aria-hidden="true" className="text-gold">
-                    ›
-                  </span>
-                  {point}
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <blockquote className="border-l-2 border-gold pl-6 font-serif text-xl italic leading-relaxed text-heading md:text-2xl">
