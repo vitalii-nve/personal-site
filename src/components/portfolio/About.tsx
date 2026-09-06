@@ -32,11 +32,7 @@ export function About() {
             </p>
           </div>
           <div>
-            <blockquote className="border-l-2 border-gold pl-6 font-serif text-xl italic leading-relaxed text-heading md:text-2xl">
-              "The best systems don't just work — they make the physics obvious and
-              the complexity invisible."
-            </blockquote>
-            <div className="mt-12 divide-y divide-border border-y border-border">
+            <div className="divide-y divide-border border-y border-border">
               {details.map((detail) => (
                 <div key={detail.label} className="flex flex-col gap-1.5 py-5">
                   <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-gold">
