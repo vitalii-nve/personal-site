@@ -69,7 +69,7 @@ const projects: Project[] = [
     problem:
       "Rebar tying is repetitive, slow and physically punishing, and it happens on an unstructured, uneven site rather than in the controlled environment precision hardware is usually designed for.",
     solution:
-      "Systems and mechanical engineering on GRID, a mobile robot that operates directly on the rebar grid in job-site conditions.",
+      "Consulting engagement covering system requirements, architecture and concept design, and prototyping of core modules for GRID — a mobile robot that operates directly on the rebar grid in job-site conditions.",
     outcome:
       "Spacer Robotics reports roughly 5,000 ties per eight-hour shift, on 14+ hours of runtime.",
     tags: ["Robotics", "Field Hardware", "Autonomous Systems"],

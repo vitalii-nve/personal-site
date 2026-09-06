@@ -33,15 +33,16 @@ const roles: Role[] = [
     ],
   },
   {
-    // TODO: confirm start date and location before publishing.
-    period: "Concurrent role",
+    // TODO: confirm the engagement dates before publishing.
+    period: "Consulting engagement",
     company: "Spacer Robotics",
     location: "Denmark",
-    title: "Senior Systems & Mechanical Engineer",
+    title: "Systems Engineering Consultant",
     description:
-      "Systems and mechanical engineering for autonomous construction robotics — machines that have to hold precision on an unstructured, uneven job site. Work spans mobile robot platforms, manipulators, and the mechanical integration behind them.",
-    tags: ["Robotics", "Autonomous Systems", "Field Hardware", "Mechatronics"],
+      "Consulting engagement on autonomous construction robotics. Defined the system requirements, developed the system architecture and concept design, and prototyped core modules.",
+    tags: ["Requirements", "System Architecture", "Concept Design", "Prototyping"],
   },
+
   {
     period: "Dec 2016 — Apr 2022",
     company: "Materials Research Centre",
