@@ -36,16 +36,16 @@ const projects: Project[] = [
     tags: ["Space Hardware", "Requirements Engineering", "Precision Mechanics"],
   },
   {
-    title: "NANOFABRICATOR™ Lite — Gen 1 and Gen 2",
+    title: "NANOFABRICATOR™ Lite",
     link: { href: "https://atlant3d.com/nanofabricator-lite/", label: "ATLANT 3D product page" },
     image: lite,
     context: "ATLANT 3D · benchtop tool for atomic-scale fabrication",
     problem:
       "The benchtop tool existed as a hand-built research instrument. To be sold and supported it had to become something that could be manufactured repeatably by people who had not designed it.",
     solution:
-      "Led mechanical design across both generations and owned the transfer out of R&D into production — component selection, supplier collaboration and qualification, and hands-on assembly and testing of the tools.",
+      "Led the mechanical design and owned the transfer out of R&D into production — component selection, supplier collaboration and qualification, and hands-on assembly and testing.",
     outcome:
-      "Both generations moved from research build to a manufacturable product, with the drawing package, supplier base and assembly process to support them.",
+      "The tool moved from research build to a manufacturable product, with the drawing package, supplier base and assembly process to support it.",
     tags: ["Design for Manufacture", "Production Transfer", "Supplier Qualification"],
   },
   {
