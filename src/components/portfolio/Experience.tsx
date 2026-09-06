@@ -33,8 +33,7 @@ const roles: Role[] = [
     ],
   },
   {
-    // TODO: confirm the engagement dates before publishing.
-    period: "Consulting engagement",
+    period: "Nov 2025 — Apr 2026",
     company: "Spacer Robotics",
     location: "Denmark",
     title: "Systems Engineering Consultant",
