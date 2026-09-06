@@ -1,12 +1,7 @@
-// Set this to a real form endpoint (Formspree, Web3Forms and Netlify Forms all
-// work on a static host) to enable the contact form. While it is empty the
-// section shows the email route instead — a form that posts to mailto: fails
-// silently in most browsers and does nothing at all on mobile.
-const FORM_ENDPOINT = "";
-
 const contacts = [
   {
     label: "Email",
+    value: "vitalii@balitskyi.net",
     href: "mailto:vitalii@balitskyi.net",
     icon: (
       <svg
@@ -27,6 +22,7 @@ const contacts = [
   },
   {
     label: "Phone",
+    value: "+45 50 17 54 23",
     href: "tel:+4550175423",
     icon: (
       <svg
@@ -46,6 +42,7 @@ const contacts = [
   },
   {
     label: "LinkedIn",
+    value: "/in/balitskyi",
     href: "https://www.linkedin.com/in/balitskyi/",
     icon: (
       <svg
@@ -65,121 +62,47 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-28">
-        <div className="grid gap-14 lg:grid-cols-2">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
+          {/* Left: the offer */}
           <div>
             <h2 className="font-serif text-4xl text-heading md:text-5xl">
               Start a project conversation
             </h2>
-            <p className="mt-6 max-w-md font-mono text-sm leading-relaxed text-dim">
-              Half an hour, no charge, no obligation. You describe the problem, I
-              tell you whether I am the right person for it. I usually reply within
-              a business day.
+            <div className="mt-6 max-w-md space-y-4 font-mono text-sm leading-relaxed text-dim">
+              <p>
+                Half an hour, no charge, no obligation. You describe the problem, I
+                tell you whether I am the right person for it. I usually reply
+                within a business day.
+              </p>
+              <p>No NDA needed to have that conversation.</p>
+            </div>
+          </div>
+
+          {/* Right: how to reach me */}
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
+              Get in touch
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-col gap-3">
               {contacts.map((contact) => (
                 <a
                   key={contact.label}
                   href={contact.href}
                   target={contact.href.startsWith("http") ? "_blank" : undefined}
                   rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="cta-secondary"
+                  className="group flex items-center justify-between border border-border bg-card px-5 py-4 transition-colors hover:border-gold"
                 >
-                  {contact.icon}
-                  {contact.label}
+                  <span className="flex items-center gap-3 font-mono text-sm text-foreground">
+                    <span className="text-gold">{contact.icon}</span>
+                    {contact.label}
+                  </span>
+                  <span className="font-mono text-xs text-subtle transition-colors group-hover:text-gold">
+                    {contact.value}
+                  </span>
                 </a>
               ))}
             </div>
           </div>
-
-          {FORM_ENDPOINT ? (
-          <form
-            action={FORM_ENDPOINT}
-            method="post"
-            className="space-y-5 border border-border bg-card p-6 md:p-8"
-          >
-            <div>
-              <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                className="mt-2 w-full border border-border bg-background px-4 py-3 font-mono text-sm text-foreground placeholder:text-subtle focus:border-gold focus:outline-none"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="mt-2 w-full border border-border bg-background px-4 py-3 font-mono text-sm text-foreground placeholder:text-subtle focus:border-gold focus:outline-none"
-                placeholder="you@company.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="company" className="block font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                Company / Project
-              </label>
-              <input
-                id="company"
-                name="company"
-                type="text"
-                className="mt-2 w-full border border-border bg-background px-4 py-3 font-mono text-sm text-foreground placeholder:text-subtle focus:border-gold focus:outline-none"
-                placeholder="Company or project name"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                What are you building?
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="mt-2 w-full border border-border bg-background px-4 py-3 font-mono text-sm text-foreground placeholder:text-subtle focus:border-gold focus:outline-none"
-                placeholder="A short description of the challenge or project..."
-              />
-            </div>
-            <button type="submit" className="cta-primary w-full">
-              Send message
-            </button>
-            <p className="font-mono text-[10px] text-subtle">
-              Goes straight to my inbox. Nothing is stored on this site.
-            </p>
-          </form>
-          ) : (
-            <div className="border border-border bg-card p-6 md:p-8">
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-gold">
-                What to send
-              </p>
-              <ul className="mt-5 space-y-3 font-mono text-sm leading-relaxed text-dim">
-                {[
-                  "What you are building, in a paragraph.",
-                  "Where it is stuck — or which decision is coming up.",
-                  "Roughly where you are: concept, prototype, pre-production.",
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-3">
-                    <span aria-hidden="true" className="text-gold">
-                      ›
-                    </span>
-                    {line}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 font-mono text-sm leading-relaxed text-dim">
-                That is enough for me to tell you on a first call whether I can
-                help. No NDA needed to have that conversation.
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </section>
