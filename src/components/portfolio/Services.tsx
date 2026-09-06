@@ -4,7 +4,7 @@ const services = [
   {
     title: "Requirements and design review",
     description:
-      "Before you commit to tooling, a supplier or a design freeze: what does done actually mean for this machine? Often nobody has written it down. I define the requirements — performance, environment, manufacture, acceptance — and review the design against them. For some clients that is the whole engagement. For others it is where a longer one starts.",
+      "Before you commit to tooling, a supplier or a design freeze: what does done actually mean for this machine? Often nobody has written it down. I define the requirements — performance, environment, manufacture, acceptance — and review the design against them.",
     tags: ["Requirements", "Architecture", "Risk review"],
   },
   {
@@ -16,7 +16,7 @@ const services = [
   {
     title: "The engineering practice",
     description:
-      "Getting one machine across is a project. Getting every machine across is a practice: design reviews that catch things early, documentation someone else can pick up, an engineering group that makes the same call twice. I built that function at ATLANT 3D from a single role.",
+      "Getting one machine across is a project. Getting every machine across is a practice: design reviews that catch things early, documentation someone else can pick up, an engineering group that makes the same call twice.",
     tags: ["Design review", "Mentoring", "Documentation"],
   },
 ];
