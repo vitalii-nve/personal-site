@@ -56,8 +56,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* The honest answer to the question every buyer asks silently:
-            does he have time, and whose IP am I talking into? */}
         <div className="mt-12 grid gap-10 border-t border-border pt-12 lg:grid-cols-[1fr_auto] lg:items-start lg:gap-16">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
@@ -69,12 +67,6 @@ export function Services() {
                 you describe what you are building and where it is stuck, and I
                 tell you whether I can help. If I am not the right person, I will
                 say so on that call rather than three weeks into an engagement.
-              </p>
-              <p>
-                I am in full-time engineering roles and take a limited amount of
-                outside work, so I am selective about what I pick up. Scope,
-                timing and any conflicts of interest get agreed up front, before
-                anything is committed.
               </p>
             </div>
           </div>
