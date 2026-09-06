@@ -39,7 +39,7 @@ const roles: Role[] = [
     location: "Denmark",
     title: "Senior Systems & Mechanical Engineer",
     description:
-      "Systems and mechanical engineering for autonomous construction robotics — machines that have to hold precision on an unstructured, uneven job site rather than on an optical bench. Work spans mobile robot platforms, manipulators, and the mechanical integration behind them.",
+      "Systems and mechanical engineering for autonomous construction robotics — machines that have to hold precision on an unstructured, uneven job site. Work spans mobile robot platforms, manipulators, and the mechanical integration behind them.",
     tags: ["Robotics", "Autonomous Systems", "Field Hardware", "Mechatronics"],
   },
   {

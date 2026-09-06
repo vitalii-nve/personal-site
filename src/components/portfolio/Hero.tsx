@@ -8,12 +8,12 @@ const stats = [
 ];
 
 const headlineWords = [
-  "Turning",
-  "breakthrough",
-  "science",
-  "into",
-  "scalable",
-  "hardware.",
+  "Precision",
+  "hardware,",
+  "from",
+  "prototype",
+  "to",
+  "product.",
 ];
 
 export function Hero() {
@@ -42,34 +42,38 @@ export function Hero() {
           <div className="bento-card flex flex-col justify-between p-7 md:p-9 lg:row-span-2">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
-                System Engineering Lead · Denmark
+                For deep-tech hardware teams · Denmark
               </p>
               <h1 className="mt-6 font-serif text-3xl leading-[1.1] text-heading md:text-4xl lg:text-5xl">
                 {headlineWords.map((word, i) => (
+                  // whitespace-pre keeps the trailing space inside the
+                  // inline-block, so the h1 reads as a sentence to crawlers
+                  // and screen readers rather than one long word.
                   <span
                     key={i}
                     ref={(el) => { wordsRef.current[i] = el; }}
-                    className="word-reveal mr-2 inline-block"
+                    className="word-reveal inline-block whitespace-pre"
                     style={{ animationDelay: `${0.05 + i * 0.06}s` }}
                   >
-                    {word === "scalable" ? (
+                    {word === "product." ? (
                       <em className="italic text-gold">{word}</em>
                     ) : (
                       word
                     )}
+                    {i < headlineWords.length - 1 ? " " : ""}
                   </span>
                 ))}
               </h1>
               <div className="mt-6 max-w-md space-y-4 font-mono text-sm leading-relaxed text-dim">
                 <p>
-                  Materials science invents the process. Mechanical engineering makes
-                  it run every day, unattended, to a number. Most deep-tech hardware
-                  lives or dies in the gap between the two — and that gap is where I
-                  work.
+                  You have something that works. Now it has to be built by people who
+                  weren't there when it was invented — from a drawing, repeatably,
+                  against a schedule set before anyone knew where the hard part would
+                  be.
                 </p>
                 <p>
-                  Ten years across vacuum, motion and deposition systems. Currently
-                  leading mechanical engineering at ATLANT 3D in Taastrup, Denmark.
+                  That crossing is what I do. Ten years across gas, motion and
+                  deposition systems, and the engineering groups that build them.
                 </p>
               </div>
             </div>
@@ -113,7 +117,7 @@ export function Hero() {
                 Available for
               </p>
               <p className="mt-2 font-mono text-sm text-dim">
-                Architecture reviews · prototype-to-production · hardware under hard constraints
+                Requirements & design review · prototype to production · engineering practice
               </p>
             </div>
           </div>

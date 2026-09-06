@@ -28,11 +28,11 @@ const projects: Project[] = [
     image: zeroG,
     context: "ATLANT 3D · atomic layer processing for in-space manufacturing",
     problem:
-      "Spare parts, prototype components and high-precision repairs on a crewed platform have to be launched from the ground — slow, expensive, and impossible to improvise. ATLANT 3D's atomic layer processing worked on a bench; it needed to work in orbit.",
+      "Spare parts, prototype components and high-precision repairs on a crewed platform have to be launched from the ground, which is slow and expensive. ATLANT 3D's atomic layer processing worked on a bench; it needed to work in orbit.",
     solution:
       "Led the mechanical design of the space-adapted system, working to space-qualification and crewed-platform requirements including compatibility with the ISS European Drawer Rack (EDR2). Owned component selection, assembly and test.",
     outcome:
-      "A ground-based process carried into a microgravity, crew-rated envelope — the hardest of the three platform adaptations, and the one with the least room to negotiate on requirements.",
+      "A ground-based process adapted to run in microgravity, inside a crew-rated envelope, to fixed space-qualification requirements.",
     tags: ["Space Hardware", "Requirements Engineering", "Precision Mechanics"],
   },
   {
@@ -54,7 +54,7 @@ const projects: Project[] = [
     image: pro,
     context: "ATLANT 3D · industrial platform for AI-driven materials discovery",
     problem:
-      "The industrial platform had to be designed for build by an external manufacturing partner — which means the design has to survive being handed across a company boundary, not just across a desk.",
+      "The industrial platform had to be designed for build by an external manufacturing partner — which means the design has to be complete and unambiguous enough to hand to another company.",
     solution:
       "Contributed mechanical design and managed requirements in collaboration with manufacturing partner Automated Industrial Robotics, taking the platform from specification to buildable design.",
     outcome:
@@ -67,7 +67,7 @@ const projects: Project[] = [
     image: grid,
     context: "Spacer Robotics · construction site automation",
     problem:
-      "Rebar tying is repetitive, slow and physically punishing, and it happens on an unstructured, uneven site — the opposite of the controlled environment precision hardware is usually designed for.",
+      "Rebar tying is repetitive, slow and physically punishing, and it happens on an unstructured, uneven site rather than in the controlled environment precision hardware is usually designed for.",
     solution:
       "Systems and mechanical engineering on GRID, a mobile robot that operates directly on the rebar grid in job-site conditions.",
     outcome:
@@ -93,7 +93,7 @@ const projects: Project[] = [
     image: dipCoating,
     context: "Materials Research Centre · smart textiles",
     problem:
-      "MXene-functionalised yarn was a manual batch process, which put any real textile application out of reach.",
+      "MXene-functionalised yarn was a manual batch process, which limited textile applications to laboratory quantities.",
     solution:
       "Engineered an automated, continuous dip-coating platform for yarn — turning a laboratory technique into a production process.",
     outcome:

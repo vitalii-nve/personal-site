@@ -2,22 +2,22 @@ import { SectionHeader } from "./SectionHeader";
 
 const services = [
   {
-    title: "System architecture reviews",
+    title: "Requirements and design review",
     description:
-      "I read your design pack and tell you where it will hurt — subsystem interfaces, tolerance stack-ups, thermal and vacuum compatibility, the assumptions that only break once tooling is paid for. Most of what I catch is cheap to fix at the point I catch it.",
-    tags: ["Architecture", "Risk review", "Interface design"],
+      "Before you commit to tooling, a supplier or a design freeze: what does done actually mean for this machine? Often nobody has written it down. I define the requirements — performance, environment, manufacture, acceptance — and review the design against them. For some clients that is the whole engagement. For others it is where a longer one starts.",
+    tags: ["Requirements", "Architecture", "Risk review"],
   },
   {
     title: "Prototype to production",
     description:
-      "The gap between a machine that works because you built it and one that works because it was manufactured. Component selection, supplier qualification, drawing packages, assembly and acceptance procedures — the unglamorous work that makes unit one and unit fifty behave alike.",
+      "It works when you build it. Now it has to work when someone else does — from a drawing, to the requirements you agreed, repeatably. Component selection, supplier qualification, drawing packages, assembly and acceptance procedures: the work that makes unit one and unit fifty behave the same way.",
     tags: ["Design for manufacture", "Scale-up", "Supplier hand-off"],
   },
   {
-    title: "Hardware under hard constraints",
+    title: "The engineering practice",
     description:
-      "Precision that has to survive somewhere unforgiving — a crewed platform with a launch mass budget, or an uneven construction site. I have taken the same core process into a space-qualified envelope and into field robotics, and the discipline transfers.",
-    tags: ["Space-qualified", "Field hardware", "Requirements"],
+      "Getting one machine across is a project. Getting every machine across is a practice: design reviews that catch things early, documentation someone else can pick up, an engineering group that makes the same call twice. I built that function at ATLANT 3D from a single role.",
+    tags: ["Design review", "Mentoring", "Documentation"],
   },
 ];
 
