@@ -40,14 +40,14 @@ const personSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vitalii Balitskyi — System Engineering Lead & Consultant" },
+      { title: "V. Balitskyi" },
       {
         name: "description",
         content:
           "Vitalii Balitskyi — System Engineering Lead in Denmark. I turn breakthrough science into scalable hardware, from lab prototype to industrial system.",
       },
       { rel: "canonical", href: "https://balitskyi.net/" },
-      { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead & Consultant" },
+      { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead" },
       {
         property: "og:description",
         content:
