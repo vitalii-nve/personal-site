@@ -84,23 +84,25 @@ export function Publications() {
     <section id="publications" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-6 py-24">
         <SectionHeader number="05" title="Publications" />
-        <div className="space-y-4">
+        {/* Dense list rather than cards: eleven entries as cards dominated the
+            page, and the count is the signal more than any single paper. */}
+        <div className="divide-y divide-border border-y border-border">
           {publications.map((publication) => (
             <article
               key={publication.title}
-              className="flex gap-8 border border-border bg-card p-6 transition-all duration-300 hover:translate-x-1 hover:border-gold"
+              className="grid gap-1 py-4 md:grid-cols-[64px_1fr] md:gap-6"
             >
-              <span className="w-14 shrink-0 font-serif text-lg text-subtle">
+              <span className="pt-1 font-mono text-xs tabular-nums text-subtle">
                 {publication.year}
               </span>
               <div>
-                <h3 className="font-serif text-lg leading-snug text-heading">
+                <h3 className="font-serif text-base leading-snug text-heading">
                   {publication.doi ? (
                     <a
                       href={`https://doi.org/${publication.doi}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="underline decoration-border underline-offset-4 transition-colors hover:decoration-gold hover:text-gold"
+                      className="transition-colors hover:text-gold"
                     >
                       {publication.title}
                     </a>
@@ -108,7 +110,7 @@ export function Publications() {
                     publication.title
                   )}
                 </h3>
-                <p className="mt-2 font-mono text-sm leading-relaxed text-dim">
+                <p className="mt-1 font-mono text-xs leading-relaxed text-subtle">
                   {publication.venue}
                 </p>
               </div>
