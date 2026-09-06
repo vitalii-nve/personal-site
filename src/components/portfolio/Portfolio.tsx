@@ -28,11 +28,11 @@ const projects: Project[] = [
     image: zeroG,
     context: "ATLANT 3D · atomic layer processing for in-space manufacturing",
     problem:
-      "The technology was developed on the ground, on a bench, in normal gravity. Operating in orbit meant transferring it into a microgravity environment and meeting the requirements of a crewed platform.",
+      "The technology was developed and proven on the ground, on a bench. Putting it in orbit meant transferring it whole into a different environment, under a different set of rules.",
     solution:
       "Led the mechanical design of the space-adapted system, working to space-qualification and crewed-platform requirements including compatibility with the ISS European Drawer Rack (EDR2). Owned component selection, assembly and test.",
     outcome:
-      "ATLANT 3D describes the result as atomic-scale fabrication in orbit: spare parts on demand, high-precision repairs, and in-space production of semiconductors, MEMS and coatings.",
+      "A ground-based process adapted to run in microgravity, inside a crew-rated envelope, to fixed space-qualification requirements.",
     tags: ["Space Hardware", "Requirements Engineering", "Precision Mechanics"],
   },
   {
