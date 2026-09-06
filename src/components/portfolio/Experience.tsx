@@ -18,7 +18,7 @@ const roles: Role[] = [
     location: "Taastrup, Denmark",
     title: "Mechanical Engineering Group Lead",
     priorTitles: [
-      "Team Lead, Engineering · Jan 2023 — 2024",
+      "Team Lead Engineering · Jan 2023 — 2024",
       "Mechanical Design Engineer · Jun 2022 — Dec 2022",
     ],
     description:
