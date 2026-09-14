@@ -14,17 +14,17 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-xl">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3.5">
         <a
           href="#top"
-          className="font-serif text-lg text-heading transition-colors hover:text-gold"
+          className="font-display text-[1.05rem] font-bold tracking-[-0.01em] text-heading transition-colors hover:text-amber"
         >
           V. Balitskyi
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="nav-link">
@@ -71,7 +71,7 @@ export function Nav() {
 
       {/* Mobile overlay */}
       <div
-        className={`fixed inset-x-0 top-[61px] z-40 border-b border-border bg-background/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
+        className={`fixed inset-x-0 top-[57px] z-40 border-b border-border bg-background/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden`}
       >

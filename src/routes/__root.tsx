@@ -15,9 +15,9 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-7xl font-bold text-heading">404</h1>
-        <h2 className="mt-4 font-serif text-xl text-heading">Page not found</h2>
-        <p className="mt-2 font-mono text-sm text-dim">
+        <h1 className="font-display text-7xl font-bold tracking-[-0.03em] text-heading">404</h1>
+        <h2 className="mt-4 font-display text-xl font-bold text-heading">Page not found</h2>
+        <p className="mt-2 text-[0.95rem] text-dim">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
@@ -40,10 +40,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-xl tracking-tight text-heading">
+        <h1 className="font-display text-xl font-bold tracking-tight text-heading">
           This page didn't load
         </h1>
-        <p className="mt-2 font-mono text-sm text-dim">
+        <p className="mt-2 text-[0.95rem] text-dim">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Vitalii Balitskyi — System Engineering Lead in Denmark. I turn breakthrough science into scalable hardware, from lab prototype to industrial system.",
       },
       { name: "author", content: "Vitalii Balitskyi" },
+      { name: "theme-color", content: "#121820" },
       { rel: "canonical", href: "https://balitskyi.net/" },
       { property: "og:title", content: "Vitalii Balitskyi — System Engineering Lead" },
       {
@@ -102,7 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Sans+3:wght@400;600&display=swap",
       },
     ],
   }),

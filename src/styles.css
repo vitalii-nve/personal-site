@@ -5,12 +5,25 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — dark industrial aesthetic with warm gold accents.
- * Single (dark) theme defined in :root. All colors use oklch.
+ * Design system — "CAD viewport".
+ *
+ * Ground: dark blue-grey, the colour of a modelling viewport rather than
+ * generic near-black. Accent: a single amber, used as annotation ink — it
+ * marks labels and links, never body copy, values or borders.
+ *
+ * Principle: loud in type and structure, quiet in colour. Hierarchy comes
+ * from line weight (1.5px / 1px / hairline) and from type, the way it does
+ * on a drawing. Nothing lifts, glows or turns amber on hover except links.
+ *
+ * Type: Archivo (variable width + weight) for display and for the condensed
+ * uppercase lettering used on labels; Source Sans 3 for running text.
+ * Body copy is never monospace.
  *
  * Semantic tokens:
- *   background #0c0e11 · card #13161b · border #252a33
- *   gold #c8a44e · foreground #e2e0dc · dim #8a8780 · subtle #5c5952 · heading #f5f3ef
+ *   background #121820 · surface #18202A · panel #1C2530
+ *   border #2A3644 · border-soft #222C38
+ *   heading #EAF0F6 · foreground #9DAEBF · dim #8395A8 · subtle #758A9F
+ *   amber #F2A93A
  */
 
 @theme inline {
@@ -20,11 +33,16 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --font-serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
-  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -40,10 +58,11 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
-  --color-gold-tint: var(--gold-tint);
+  --color-amber: var(--amber);
+  --color-amber-tint: var(--amber-tint);
   --color-heading: var(--heading);
   --color-dim: var(--dim);
   --color-subtle: var(--subtle);
@@ -63,44 +82,54 @@
 }
 
 :root {
-  --radius: 0.125rem;
-  --background: oklch(0.1629 0.0071 258.37);
-  --foreground: oklch(0.9071 0.0058 84.57);
-  --card: oklch(0.1993 0.0111 260.66);
-  --card-foreground: oklch(0.9071 0.0058 84.57);
-  --popover: oklch(0.1993 0.0111 260.66);
-  --popover-foreground: oklch(0.9071 0.0058 84.57);
-  --primary: oklch(0.7343 0.1128 86.6);
-  --primary-foreground: oklch(0.1629 0.0071 258.37);
-  --secondary: oklch(0.1993 0.0111 260.66);
-  --secondary-foreground: oklch(0.9071 0.0058 84.57);
-  --muted: oklch(0.1993 0.0111 260.66);
-  --muted-foreground: oklch(0.6239 0.0109 87.5);
-  --accent: oklch(0.7343 0.1128 86.6 / 0.12);
-  --accent-foreground: oklch(0.7343 0.1128 86.6);
+  --radius: 0rem;
+
+  --background: #121820;
+  --surface: #18202a;
+  --panel: #1c2530;
+  --border: #2a3644;
+  --border-soft: #222c38;
+
+  --heading: #eaf0f6;
+  --foreground: #9daebf;
+  --dim: #8395a8;
+  --subtle: #758a9f;
+
+  --amber: #f2a93a;
+  --amber-tint: rgb(242 169 58 / 0.1);
+
+  /* shadcn slots, mapped onto the viewport palette */
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--panel);
+  --popover-foreground: var(--foreground);
+  --primary: var(--amber);
+  --primary-foreground: #15202b;
+  --secondary: var(--panel);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--panel);
+  --muted-foreground: var(--subtle);
+  --accent: var(--amber-tint);
+  --accent-foreground: var(--amber);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.9646 0.0057 84.57);
-  --border: oklch(0.284 0.0181 262.21);
-  --input: oklch(0.284 0.0181 262.21);
-  --ring: oklch(0.7343 0.1128 86.6);
-  --gold: oklch(0.7343 0.1128 86.6);
-  --gold-tint: oklch(0.7343 0.1128 86.6 / 0.08);
-  --heading: oklch(0.9646 0.0057 84.57);
-  --dim: oklch(0.6239 0.0109 87.5);
-  --subtle: oklch(0.4646 0.0117 87.53);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.1629 0.0071 258.37);
-  --sidebar-foreground: oklch(0.9071 0.0058 84.57);
-  --sidebar-primary: oklch(0.7343 0.1128 86.6);
-  --sidebar-primary-foreground: oklch(0.1629 0.0071 258.37);
-  --sidebar-accent: oklch(0.1993 0.0111 260.66);
-  --sidebar-accent-foreground: oklch(0.9071 0.0058 84.57);
-  --sidebar-border: oklch(0.284 0.0181 262.21);
-  --sidebar-ring: oklch(0.7343 0.1128 86.6);
+  --destructive-foreground: #eaf0f6;
+  --input: var(--border);
+  --ring: var(--amber);
+
+  --chart-1: #f2a93a;
+  --chart-2: #7fa6c9;
+  --chart-3: #5f7185;
+  --chart-4: #c98f4a;
+  --chart-5: #9daebf;
+
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--amber);
+  --sidebar-primary-foreground: #15202b;
+  --sidebar-accent: var(--panel);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--amber);
 }
 
 @layer base {
@@ -115,92 +144,75 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-mono);
-    font-weight: 300;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: var(--color-gold);
-    color: var(--color-background);
+    background-color: var(--color-amber);
+    color: #15202b;
   }
+}
 
-  /* Subtle film grain noise overlay across the whole page */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
-  }
+/*
+ * Drawing lettering. Condensed uppercase, used for every label on the page —
+ * eyebrows, column headers, stage numbers, captions, tags. Archivo is a
+ * variable font, so the condensed cut comes from the width axis rather than
+ * a second family.
+ */
+@utility lettering {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 82;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/*
+ * Section separator: a thick rule over a hairline, as a drawing divides
+ * zones. This is the element that makes the page read as drafted rather
+ * than decorated, so it is deliberately the only divider style used.
+ */
+@utility rule-heavy {
+  border-top: 1.5px solid var(--color-subtle);
+  padding-top: 5px;
+}
+
+.rule-heavy::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Selection handles, as on selected geometry in a viewport. */
+.handle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--color-amber);
+  pointer-events: none;
+}
+
+.handle-tl {
+  top: -4px;
+  left: -4px;
+}
+.handle-tr {
+  top: -4px;
+  right: -4px;
+}
+.handle-bl {
+  bottom: -4px;
+  left: -4px;
+}
+.handle-br {
+  bottom: -4px;
+  right: -4px;
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@utility fade-up {
-  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translateY(36px);
-    filter: blur(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-@utility reveal-up {
-  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@supports (animation-timeline: view()) {
-  .reveal-up {
-    animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 22%;
-  }
-}
-
-@keyframes line-grow {
-  from {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  to {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-
-@utility line-grow {
-  animation: line-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@supports (animation-timeline: view()) {
-  .line-grow {
-    animation: line-grow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
-  }
-}
-
-@keyframes word-reveal {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -211,102 +223,119 @@
   }
 }
 
+@utility fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility reveal-up {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+}
+
+@keyframes word-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @utility word-reveal {
   display: inline-block;
   opacity: 0;
-  animation: word-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: word-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-@keyframes glow-pulse {
-  0%, 100% {
-    opacity: 0.08;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.14;
-    transform: scale(1.05);
-  }
+/*
+ * Images are greyscale until you look at one. The six project photographs
+ * come from four sources with very different colour casts; desaturated they
+ * read as one set, and the colour becomes a response to attention.
+ */
+@utility plate {
+  filter: grayscale(1) contrast(1.06) brightness(0.97);
+  transition: filter 0.5s ease;
 }
 
-@utility glow-pulse {
-  animation: glow-pulse 8s ease-in-out infinite;
+.group:hover .plate,
+.plate:hover {
+  filter: none;
 }
-
-@keyframes grain-shift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 160px 160px;
-  }
-}
-
-@utility grain-shift {
-  animation: grain-shift 12s linear infinite;
-}
-
-.bento-card {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-card);
-  transition: border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.bento-card:hover {
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px -18px color-mix(in oklab, var(--color-gold) 12%, transparent);
-}
-
 
 .nav-link {
-  padding: 0.5rem 0.75rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 82;
+  font-weight: 500;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--color-dim);
-  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 0.7rem;
+  color: var(--color-subtle);
+  transition: color 0.25s ease;
 }
 
 .nav-link:hover {
-  background-color: var(--color-gold-tint);
-  color: var(--color-gold);
+  color: var(--color-amber);
 }
-
 
 .mobile-nav-link {
   display: block;
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.015em;
   color: var(--color-heading);
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .mobile-nav-link:hover {
-  color: var(--color-gold);
+  color: var(--color-amber);
 }
 
-
+/*
+ * Buttons are rectangles with square corners and no lift. The primary is
+ * solid amber because it is the one action on the page; the secondary is a
+ * hairline box that takes the accent on hover.
+ */
 .cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-gold);
-  padding: 0.875rem 1.5rem;
-  font-family: var(--font-mono);
+  background-color: var(--color-amber);
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 82;
+  font-weight: 600;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-background);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  letter-spacing: 0.2em;
+  color: #15202b;
+  transition: background-color 0.25s ease;
 }
 
-
-
 .cta-primary:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
+  background-color: #ffc061;
 }
 
 .cta-secondary {
@@ -314,22 +343,38 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1px solid var(--color-gold);
-  padding: 0.875rem 1.5rem;
-  font-family: var(--font-mono);
+  border: 1px solid var(--color-subtle);
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 82;
+  font-weight: 600;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-gold);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 0.2em;
+  color: var(--color-heading);
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .cta-secondary:hover {
-  background-color: var(--color-gold);
-  color: var(--color-background);
-  transform: translateY(-1px);
+  border-color: var(--color-amber);
+  color: var(--color-amber);
 }
 
+/* A link in running text: underlined in the border colour, amber on hover. */
+.ink-link {
+  color: var(--color-heading);
+  border-bottom: 1px solid var(--color-border);
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ink-link:hover {
+  color: var(--color-amber);
+  border-bottom-color: var(--color-amber);
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -337,15 +382,12 @@
   }
   .fade-up,
   .reveal-up,
-  .line-grow,
-  .word-reveal,
-  .glow-pulse,
-  .grain-shift {
+  .word-reveal {
     animation: none;
-  }
-  .bento-card:hover,
-  .cta-primary:hover,
-  .cta-secondary:hover {
+    opacity: 1;
     transform: none;
+  }
+  .plate {
+    transition: none;
   }
 }

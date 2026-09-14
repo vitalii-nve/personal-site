@@ -11,22 +11,20 @@ const logos = [
 
 export function Testimonials() {
   return (
-    <section id="trust" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20">
-        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
-          Worked with
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
+    <section id="trust" className="scroll-mt-24">
+      <div className="mx-auto w-full max-w-6xl px-6 pb-20">
+        <p className="lettering text-[10.5px] text-subtle">Worked with</p>
+        <div className="mt-4 flex flex-wrap gap-2.5">
           {logos.map((logo) => (
             <div
               key={logo.name}
-              className="flex items-center gap-3 border border-border bg-card px-5 py-3 transition-colors hover:border-gold"
+              className="flex items-center gap-3 border border-border px-4 py-2.5"
               title={logo.name}
             >
-              <span className="flex h-8 w-8 items-center justify-center border border-gold font-mono text-[10px] uppercase tracking-[0.1em] text-gold">
+              <span className="lettering text-[9px] tracking-[0.14em] text-subtle">
                 {logo.abbr}
               </span>
-              <span className="font-mono text-xs text-dim">{logo.name}</span>
+              <span className="text-[0.9rem] text-foreground">{logo.name}</span>
             </div>
           ))}
         </div>
