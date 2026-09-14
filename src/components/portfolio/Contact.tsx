@@ -16,29 +16,23 @@ const contacts = [
   },
 ];
 
+/*
+ * No offer copy here. "Half an hour, no charge, no obligation" is stated
+ * once, at the end of Services — repeating it above the contact rows said
+ * the same thing twice.
+ */
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
       <div className="mx-auto w-full max-w-6xl px-6 pb-20">
         <div className="rule-heavy reveal-up" />
-        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-          {/* Left: the offer */}
-          <div>
-            <h2 className="font-display text-[1.9rem] font-bold leading-tight tracking-[-0.02em] text-heading md:text-[2.25rem]">
-              Start a project conversation
-            </h2>
-            <div className="mt-5 max-w-md space-y-3 leading-relaxed text-foreground">
-              <p>
-                Half an hour, no charge, no obligation. You describe the problem, I
-                tell you whether I am the right person for it. I usually reply
-                within a business day.
-              </p>
-              <p>No NDA needed to have that conversation.</p>
-            </div>
-          </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <h2 className="font-display text-[1.9rem] font-bold leading-tight tracking-[-0.02em] text-heading md:text-[2.25rem]">
+            Start a project conversation
+          </h2>
 
-          {/* Right: how to reach me. The accent marks the link on hover,
-              not the address itself — colour here is a state, not decoration. */}
+          {/* The accent marks the link on hover, not the address itself —
+              colour here is a state, not decoration. */}
           <div>
             <p className="lettering text-[10.5px] text-amber">Get in touch</p>
             <div className="mt-4 flex flex-col gap-2.5">
