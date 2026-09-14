@@ -59,21 +59,6 @@ export function Services() {
             </article>
           ))}
         </div>
-
-        <div className="mt-14 grid gap-8 border-t border-border pt-10 lg:grid-cols-[1fr_auto] lg:items-start lg:gap-16">
-          <div>
-            <p className="lettering text-[10.5px] text-amber">Working together</p>
-            <p className="mt-4 max-w-2xl leading-relaxed text-foreground">
-              Start with a call. Half an hour, no charge and no obligation — you
-              describe what you are building and where it is stuck, and I tell you
-              whether I can help. If I am not the right person, I will say so on
-              that call rather than three weeks into an engagement.
-            </p>
-          </div>
-          <a href="#contact" className="cta-primary shrink-0 self-start">
-            Tell me what you're building
-          </a>
-        </div>
       </div>
     </section>
   );

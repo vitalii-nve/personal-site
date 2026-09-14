@@ -16,6 +16,11 @@ const contacts = [
   },
 ];
 
+/*
+ * The offer is stated once, here, where the reader can act on it. The
+ * "Working together" block that used to repeat it at the end of Services
+ * has been removed.
+ */
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
