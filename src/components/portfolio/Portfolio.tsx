@@ -104,81 +104,85 @@ const projects: Project[] = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="03" title="Selected Projects" />
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
+    <section id="portfolio" className="scroll-mt-24">
+      <div className="mx-auto w-full max-w-6xl px-6 pb-20">
+        <SectionHeader title="Selected projects" />
+        <div className="mt-10">
+          {projects.map((project, i) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-gold)_12%,transparent)]"
+              className={`group grid gap-8 pb-9 md:grid-cols-[330px_1fr] md:gap-10 ${
+                i > 0 ? "border-t border-border pt-9" : ""
+              }`}
             >
               {project.image && (
-                <div className="overflow-hidden">
+                <div className="border border-subtle bg-surface self-start">
                   <img
                     src={project.image}
                     alt={project.title}
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="aspect-[16/10] w-full bg-background object-cover grayscale transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                    className="plate aspect-[16/10] w-full object-cover"
                   />
                 </div>
               )}
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-lg text-heading md:text-xl">
+              <div>
+                <h3 className="font-display text-[1.35rem] font-bold leading-snug tracking-[-0.015em] text-heading">
                   {project.title}
                 </h3>
-                <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-subtle">
+                <p className="lettering mt-1.5 text-[10px] tracking-[0.15em] text-subtle">
                   {project.context}
                 </p>
-                <dl className="mt-5 space-y-3">
-                  <div>
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                <dl className="mt-5 space-y-2.5">
+                  <div className="grid gap-1 md:grid-cols-[80px_1fr] md:gap-5">
+                    <dt className="lettering pt-1 text-[9.5px] tracking-[0.17em] text-amber">
                       Problem
                     </dt>
-                    <dd className="mt-1 font-mono text-sm leading-relaxed text-dim">
+                    <dd className="text-[0.95rem] leading-relaxed text-foreground">
                       {project.problem}
                     </dd>
                   </div>
-                  <div>
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                  <div className="grid gap-1 md:grid-cols-[80px_1fr] md:gap-5">
+                    <dt className="lettering pt-1 text-[9.5px] tracking-[0.17em] text-amber">
                       My role
                     </dt>
-                    <dd className="mt-1 font-mono text-sm leading-relaxed text-dim">
+                    <dd className="text-[0.95rem] leading-relaxed text-foreground">
                       {project.solution}
                     </dd>
                   </div>
-                  <div className="border-l-2 border-gold bg-gold-tint px-4 py-3">
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                  <div className="grid gap-1 md:grid-cols-[80px_1fr] md:gap-5">
+                    <dt className="lettering pt-1 text-[9.5px] tracking-[0.17em] text-amber">
                       Outcome
                     </dt>
-                    <dd className="mt-1 font-mono text-sm leading-relaxed text-dim">
+                    <dd className="text-[0.95rem] leading-relaxed text-heading">
                       {project.outcome}
                     </dd>
                   </div>
                 </dl>
-                <ul className="mt-5 flex flex-wrap gap-2 pt-1">
-                  {project.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="bg-gold-tint px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-gold"
+                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+                  <ul className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="lettering border border-border px-2.5 py-1.5 text-[9px] tracking-[0.15em] text-foreground"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  {project.link && (
+                    <a
+                      href={project.link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="lettering inline-flex items-center gap-2 text-[9.5px] tracking-[0.16em] text-subtle transition-colors hover:text-amber"
                     >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-                {project.link && (
-                  <a
-                    href={project.link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-70"
-                  >
-                    {project.link.label}
-                    <span aria-hidden="true">→</span>
-                  </a>
-                )}
+                      {project.link.label}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}

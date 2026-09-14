@@ -81,28 +81,28 @@ const publications: Publication[] = [
 
 export function Publications() {
   return (
-    <section id="publications" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="05" title="Publications" />
+    <section id="publications" className="scroll-mt-24">
+      <div className="mx-auto w-full max-w-6xl px-6 pb-20">
+        <SectionHeader title="Publications" />
         {/* Dense list rather than cards: eleven entries as cards dominated the
             page, and the count is the signal more than any single paper. */}
-        <div className="divide-y divide-border border-y border-border">
+        <div className="mt-10 border-t border-border">
           {publications.map((publication) => (
             <article
               key={publication.title}
-              className="grid gap-1 py-4 md:grid-cols-[64px_1fr] md:gap-6"
+              className="grid gap-1 border-b border-border-soft py-3 md:grid-cols-[66px_1fr] md:gap-5"
             >
-              <span className="pt-1 font-mono text-xs tabular-nums text-subtle">
+              <span className="lettering pt-1 text-[10.5px] tabular-nums tracking-[0.1em] text-subtle">
                 {publication.year}
               </span>
               <div>
-                <h3 className="font-serif text-base leading-snug text-heading">
+                <h3 className="text-[1rem] leading-snug text-heading">
                   {publication.doi ? (
                     <a
                       href={`https://doi.org/${publication.doi}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="transition-colors hover:text-gold"
+                      className="ink-link"
                     >
                       {publication.title}
                     </a>
@@ -110,7 +110,7 @@ export function Publications() {
                     publication.title
                   )}
                 </h3>
-                <p className="mt-1 font-mono text-xs leading-relaxed text-subtle">
+                <p className="lettering mt-1 text-[9.5px] leading-relaxed tracking-[0.1em] text-subtle">
                   {publication.venue}
                 </p>
               </div>

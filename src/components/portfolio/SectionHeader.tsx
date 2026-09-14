@@ -1,16 +1,19 @@
 interface SectionHeaderProps {
-  number: string;
   title: string;
 }
 
-export function SectionHeader({ number, title }: SectionHeaderProps) {
+/*
+ * A section opens the way a drawing divides zones: a thick rule over a
+ * hairline, then the title. The decorative 01–06 numbering is gone — it
+ * implied a sequence the page does not have. (Services numbers its three
+ * stages, because those genuinely are one.)
+ */
+export function SectionHeader({ title }: SectionHeaderProps) {
   return (
-    <div className="mb-14 flex items-center gap-5 reveal-up">
-      <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-gold">
-        {number}
-      </span>
-      <h2 className="font-serif text-3xl text-heading md:text-4xl">{title}</h2>
-      <div aria-hidden="true" className="line-grow h-px flex-1 bg-border" />
+    <div className="rule-heavy reveal-up">
+      <h2 className="mt-8 font-display text-[1.7rem] font-bold leading-tight tracking-[-0.02em] text-heading md:text-[2rem]">
+        {title}
+      </h2>
     </div>
   );
 }

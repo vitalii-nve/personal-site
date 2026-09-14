@@ -60,69 +60,88 @@ const roles: Role[] = [
   },
 ];
 
+/*
+ * Employment history as a revision table — period, organisation, what
+ * changed. It is the form a drawing already uses to record exactly this,
+ * so the earlier per-role cards and hover bars are gone.
+ */
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-6xl px-6 py-24">
-        <SectionHeader number="04" title="Experience" />
-        <div className="divide-y divide-border border-y border-border">
-          {roles.map((role) => (
-            <article
+    <section id="experience" className="scroll-mt-24">
+      <div className="mx-auto w-full max-w-6xl px-6 pb-20">
+        <SectionHeader title="Experience" />
+        <div className="mt-10 border border-border">
+          <div className="hidden bg-panel md:grid md:grid-cols-[150px_210px_1fr]">
+            <div className="lettering border-r border-border-soft px-4 py-2.5 text-[9px] tracking-[0.2em] text-subtle">
+              Period
+            </div>
+            <div className="lettering border-r border-border-soft px-4 py-2.5 text-[9px] tracking-[0.2em] text-subtle">
+              Organisation
+            </div>
+            <div className="lettering px-4 py-2.5 text-[9px] tracking-[0.2em] text-subtle">
+              Role
+            </div>
+          </div>
+
+          {roles.map((role, i) => (
+            <div
               key={`${role.company}-${role.period}`}
-              className="group relative grid gap-8 py-10 transition-all duration-300 hover:translate-x-1 md:grid-cols-[180px_1fr]"
+              className={`grid border-border-soft md:grid-cols-[150px_210px_1fr] ${
+                i > 0 ? "border-t" : "border-t md:border-t-0"
+              }`}
             >
-              <span
-                aria-hidden="true"
-                className="absolute left-0 top-0 h-full w-[2px] scale-y-0 bg-gold transition-transform duration-500 group-hover:scale-y-100"
-              />
-              <div className="flex flex-col gap-1.5 pl-0 md:pl-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-subtle">
+              <div className="px-4 pt-4 md:border-r md:border-border-soft md:py-4">
+                <p className="lettering text-[10.5px] tracking-[0.1em] text-foreground">
                   {role.period}
-                </span>
-                <span className="font-mono text-sm text-gold">{role.company}</span>
-                <span className="font-mono text-xs text-subtle">{role.location}</span>
+                </p>
               </div>
-              <div>
-                <h3 className="font-serif text-xl text-heading md:text-2xl">
-                  {role.title}
-                </h3>
+              <div className="px-4 pt-3 md:border-r md:border-border-soft md:py-4 md:pt-4">
+                <p className="font-display text-[0.95rem] font-bold text-heading">
+                  {role.company}
+                </p>
+                <p className="lettering mt-1 text-[9.5px] tracking-[0.12em] text-subtle">
+                  {role.location}
+                </p>
+              </div>
+              <div className="px-4 pb-5 pt-3 md:py-4">
+                <p className="text-[1rem] text-heading">{role.title}</p>
                 {role.priorTitles && (
-                  <ul className="mt-2 space-y-1">
+                  <ul className="mt-1.5 space-y-0.5">
                     {role.priorTitles.map((prior) => (
                       <li
                         key={prior}
-                        className="font-mono text-xs text-subtle"
+                        className="lettering text-[9.5px] leading-relaxed tracking-[0.1em] text-subtle"
                       >
                         {prior}
                       </li>
                     ))}
                   </ul>
                 )}
-                <p className="mt-4 max-w-3xl font-mono text-sm leading-relaxed text-dim">
+                <p className="mt-3 max-w-3xl text-[0.95rem] leading-relaxed text-foreground">
                   {role.description}
                 </p>
                 {role.keyResult && (
-                  <div className="mt-5 max-w-3xl border-l-2 border-gold bg-gold-tint px-5 py-4">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                  <div className="mt-4 grid max-w-3xl gap-1 border-t border-border-soft pt-3 md:grid-cols-[80px_1fr] md:gap-5">
+                    <p className="lettering pt-1 text-[9.5px] tracking-[0.17em] text-amber">
                       Key result
-                    </span>
-                    <p className="mt-2 font-mono text-sm leading-relaxed text-dim">
+                    </p>
+                    <p className="text-[0.95rem] leading-relaxed text-heading">
                       {role.keyResult}
                     </p>
                   </div>
                 )}
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {role.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="bg-gold-tint px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-gold"
+                      className="lettering border border-border px-2.5 py-1.5 text-[9px] tracking-[0.15em] text-foreground"
                     >
                       {tag}
                     </li>
                   ))}
                 </ul>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
