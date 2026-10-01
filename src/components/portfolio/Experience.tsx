@@ -3,6 +3,9 @@ import { SectionHeader } from "./SectionHeader";
 interface Role {
   period: string;
   company: string;
+  // Set when the company has since been renamed, so the entry stays
+  // findable under the name it traded as during the engagement.
+  formerName?: string;
   location: string;
   title: string;
   priorTitles?: string[];
@@ -34,7 +37,8 @@ const roles: Role[] = [
   },
   {
     period: "Nov 2025 — Apr 2026",
-    company: "Spacer Robotics",
+    company: "ARN Autonomy",
+    formerName: "Spacer Robotics",
     location: "Denmark",
     title: "Systems Engineering Consultant",
     description:
@@ -80,6 +84,11 @@ export function Experience() {
                   {role.period}
                 </span>
                 <span className="font-mono text-sm text-gold">{role.company}</span>
+                {role.formerName && (
+                  <span className="font-mono text-xs text-subtle">
+                    formerly {role.formerName}
+                  </span>
+                )}
                 <span className="font-mono text-xs text-subtle">{role.location}</span>
               </div>
               <div>

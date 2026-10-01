@@ -1,6 +1,6 @@
 const logos = [
   { name: "ATLANT 3D", abbr: "A3D" },
-  { name: "Spacer Robotics", abbr: "SR" },
+  { name: "ARN Autonomy", abbr: "ARN" },
   { name: "Materials Research Centre", abbr: "MRC" },
   { name: "Kyiv Polytechnic Institute", abbr: "KPI" },
 ];
