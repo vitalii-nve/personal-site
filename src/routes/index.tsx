@@ -18,7 +18,7 @@ const personSchema = {
   jobTitle: "System Engineering Lead",
   worksFor: [
     { "@type": "Organization", name: "ATLANT 3D Nanosystems" },
-    { "@type": "Organization", name: "Spacer Robotics" },
+    { "@type": "Organization", name: "ARN Autonomy" },
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
