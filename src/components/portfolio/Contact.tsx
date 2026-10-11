@@ -26,20 +26,17 @@ export function Contact() {
     <section id="contact" className="scroll-mt-24">
       <div className="mx-auto w-full max-w-6xl px-6 pb-20">
         <div className="rule-heavy reveal-up" />
-        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-          {/* Left: the offer */}
+        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          {/* Left: the offer, in one sentence. The value here is the promise
+              to turn work down, so nothing is allowed to bury it. */}
           <div>
             <h2 className="font-display text-[1.9rem] font-bold leading-tight tracking-[-0.02em] text-heading md:text-[2.25rem]">
-              Start a project conversation
+              Start a conversation
             </h2>
-            <div className="mt-5 max-w-md space-y-3 leading-relaxed text-foreground">
-              <p>
-                Half an hour, no charge, no obligation. You describe the problem, I
-                tell you whether I am the right person for it. I usually reply
-                within a business day.
-              </p>
-              <p>No NDA needed to have that conversation.</p>
-            </div>
+            <p className="mt-5 max-w-md leading-relaxed text-foreground">
+              You describe the problem — I tell you whether I'm the right person
+              for it.
+            </p>
           </div>
 
           {/* Right: how to reach me. The accent marks the link on hover,
