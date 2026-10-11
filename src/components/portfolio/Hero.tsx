@@ -7,6 +7,16 @@ const stats = [
   { value: "11", label: "Publications" },
 ];
 
+// The organisations behind the numbers above. Plain names, no logos:
+// none of these are clients of a consultancy, they are where the work was
+// done, and a logo wall would overclaim that.
+const organisations = [
+  "ATLANT 3D",
+  "ARN Autonomy",
+  "Materials Research Centre",
+  "Kyiv Polytechnic Institute",
+];
+
 const headlineWords = [
   "Precision",
   "hardware,",
@@ -102,24 +112,42 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Stats */}
-          <dl>
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`border-border py-4 ${i === 0 ? "pt-0" : ""} ${
-                  i < stats.length - 1 ? "border-b" : ""
-                }`}
-              >
-                <dt className="font-display text-[2.6rem] font-bold leading-none tracking-[-0.02em] text-amber">
-                  {stat.value}
-                </dt>
-                <dd className="lettering mt-1.5 text-[10px] tracking-[0.17em] text-subtle">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          {/* Stats, then who the work was done with */}
+          <div>
+            <dl>
+              {stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`border-border py-4 ${i === 0 ? "pt-0" : ""} ${
+                    i < stats.length - 1 ? "border-b" : ""
+                  }`}
+                >
+                  <dt className="font-display text-[2.6rem] font-bold leading-none tracking-[-0.02em] text-amber">
+                    {stat.value}
+                  </dt>
+                  <dd className="lettering mt-1.5 text-[10px] tracking-[0.17em] text-subtle">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-7 border-t border-border pt-5">
+              <p className="lettering text-[9.5px] tracking-[0.2em] text-subtle">
+                Worked with
+              </p>
+              <ul className="mt-3 space-y-1.5">
+                {organisations.map((org) => (
+                  <li
+                    key={org}
+                    className="lettering text-[9.5px] leading-relaxed tracking-[0.12em] text-foreground"
+                  >
+                    {org}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
